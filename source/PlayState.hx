@@ -12,8 +12,9 @@ class PlayState extends FlxState
 
   override public function create():Void {
     super.create();
-    room = new Room("assets/tilemaps/quarters.tmx");
+    room = new Room("assets/tilemaps/hub.tmx");
     add(room.foregroundTiles);
+    add(new EffectSprite());
   }
   
   override public function destroy():Void {
