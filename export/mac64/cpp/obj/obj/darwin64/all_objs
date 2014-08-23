@@ -298,12 +298,6 @@ obj/darwin64/57588eaa_ValueType.o
 obj/darwin64/57588eaa_StringTools.o
 obj/darwin64/57588eaa_StringBuf.o
 obj/darwin64/57588eaa_Reflect.o
-obj/darwin64/57588eaa_MenuState.o
-obj/darwin64/0ed47a05_FlxState.o
-obj/darwin64/a12cfa6b_FlxGroup.o
-obj/darwin64/a12cfa6b_FlxTypedGroup.o
-obj/darwin64/0ed47a05_FlxBasic.o
-obj/darwin64/c6563687_IFlxDestroyable.o
 obj/darwin64/57588eaa_IMap.o
 obj/darwin64/57588eaa_List.o
 obj/darwin64/57588eaa_Lambda.o
@@ -311,6 +305,12 @@ obj/darwin64/57588eaa_EReg.o
 obj/darwin64/57588eaa_DefaultAssetLibrary.o
 obj/darwin64/a01872f9_AssetLibrary.o
 obj/darwin64/57588eaa_Date.o
+obj/darwin64/57588eaa_BadingState.o
+obj/darwin64/0ed47a05_FlxState.o
+obj/darwin64/a12cfa6b_FlxGroup.o
+obj/darwin64/a12cfa6b_FlxTypedGroup.o
+obj/darwin64/0ed47a05_FlxBasic.o
+obj/darwin64/c6563687_IFlxDestroyable.o
 obj/darwin64/57588eaa_DocumentClass.o
 obj/darwin64/57588eaa_Main.o
 obj/darwin64/3e2edce0_Sprite.o

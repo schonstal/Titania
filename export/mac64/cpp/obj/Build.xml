@@ -2900,57 +2900,6 @@
   <file name="src/Reflect.cpp">
    <depend name="include/Reflect.h"/>
   </file>
-  <file name="src/MenuState.cpp">
-   <depend name="include/MenuState.h"/>
-   <depend name="include/flixel/FlxBasic.h"/>
-   <depend name="include/flixel/FlxState.h"/>
-   <depend name="include/flixel/group/FlxGroup.h"/>
-   <depend name="include/flixel/group/FlxTypedGroup.h"/>
-   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
-  </file>
-  <file name="src/flixel/FlxState.cpp">
-   <depend name="include/flixel/FlxBasic.h"/>
-   <depend name="include/flixel/FlxG.h"/>
-   <depend name="include/flixel/FlxState.h"/>
-   <depend name="include/flixel/FlxSubState.h"/>
-   <depend name="include/flixel/group/FlxGroup.h"/>
-   <depend name="include/flixel/group/FlxTypedGroup.h"/>
-   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
-   <depend name="include/flixel/system/frontEnds/CameraFrontEnd.h"/>
-   <depend name="include/flixel/system/frontEnds/InputFrontEnd.h"/>
-  </file>
-  <file name="src/flixel/group/FlxGroup.cpp">
-   <depend name="include/flixel/FlxBasic.h"/>
-   <depend name="include/flixel/FlxCamera.h"/>
-   <depend name="include/flixel/FlxObject.h"/>
-   <depend name="include/flixel/FlxSprite.h"/>
-   <depend name="include/flixel/group/FlxGroup.h"/>
-   <depend name="include/flixel/group/FlxSpriteGroup.h"/>
-   <depend name="include/flixel/group/FlxTypedGroup.h"/>
-   <depend name="include/flixel/group/FlxTypedSpriteGroup.h"/>
-   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
-  </file>
-  <file name="src/flixel/group/FlxTypedGroup.cpp">
-   <depend name="include/Reflect.h"/>
-   <depend name="include/Std.h"/>
-   <depend name="include/Type.h"/>
-   <depend name="include/flixel/FlxBasic.h"/>
-   <depend name="include/flixel/group/FlxTypedGroup.h"/>
-   <depend name="include/flixel/group/FlxTypedGroupIterator.h"/>
-   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
-   <depend name="include/flixel/util/FlxArrayUtil.h"/>
-   <depend name="include/flixel/util/FlxRandom.h"/>
-  </file>
-  <file name="src/flixel/FlxBasic.cpp">
-   <depend name="include/flixel/FlxBasic.h"/>
-   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
-   <depend name="include/flixel/util/FlxPool_flixel_util_LabelValuePair.h"/>
-   <depend name="include/flixel/util/FlxStringUtil.h"/>
-   <depend name="include/flixel/util/LabelValuePair.h"/>
-  </file>
-  <file name="src/flixel/interfaces/IFlxDestroyable.cpp">
-   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
-  </file>
   <file name="src/IMap.cpp">
    <depend name="include/IMap.h"/>
   </file>
@@ -3014,6 +2963,62 @@
    <depend name="include/Date.h"/>
    <depend name="include/Std.h"/>
   </file>
+  <file name="src/BadingState.cpp">
+   <depend name="include/BadingState.h"/>
+   <depend name="include/flixel/FlxBasic.h"/>
+   <depend name="include/flixel/FlxG.h"/>
+   <depend name="include/flixel/FlxObject.h"/>
+   <depend name="include/flixel/FlxSprite.h"/>
+   <depend name="include/flixel/FlxState.h"/>
+   <depend name="include/flixel/group/FlxGroup.h"/>
+   <depend name="include/flixel/group/FlxTypedGroup.h"/>
+   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
+   <depend name="include/flixel/system/FlxSound.h"/>
+   <depend name="include/flixel/system/frontEnds/SoundFrontEnd.h"/>
+  </file>
+  <file name="src/flixel/FlxState.cpp">
+   <depend name="include/flixel/FlxBasic.h"/>
+   <depend name="include/flixel/FlxG.h"/>
+   <depend name="include/flixel/FlxState.h"/>
+   <depend name="include/flixel/FlxSubState.h"/>
+   <depend name="include/flixel/group/FlxGroup.h"/>
+   <depend name="include/flixel/group/FlxTypedGroup.h"/>
+   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
+   <depend name="include/flixel/system/frontEnds/CameraFrontEnd.h"/>
+   <depend name="include/flixel/system/frontEnds/InputFrontEnd.h"/>
+  </file>
+  <file name="src/flixel/group/FlxGroup.cpp">
+   <depend name="include/flixel/FlxBasic.h"/>
+   <depend name="include/flixel/FlxCamera.h"/>
+   <depend name="include/flixel/FlxObject.h"/>
+   <depend name="include/flixel/FlxSprite.h"/>
+   <depend name="include/flixel/group/FlxGroup.h"/>
+   <depend name="include/flixel/group/FlxSpriteGroup.h"/>
+   <depend name="include/flixel/group/FlxTypedGroup.h"/>
+   <depend name="include/flixel/group/FlxTypedSpriteGroup.h"/>
+   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
+  </file>
+  <file name="src/flixel/group/FlxTypedGroup.cpp">
+   <depend name="include/Reflect.h"/>
+   <depend name="include/Std.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/flixel/FlxBasic.h"/>
+   <depend name="include/flixel/group/FlxTypedGroup.h"/>
+   <depend name="include/flixel/group/FlxTypedGroupIterator.h"/>
+   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
+   <depend name="include/flixel/util/FlxArrayUtil.h"/>
+   <depend name="include/flixel/util/FlxRandom.h"/>
+  </file>
+  <file name="src/flixel/FlxBasic.cpp">
+   <depend name="include/flixel/FlxBasic.h"/>
+   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
+   <depend name="include/flixel/util/FlxPool_flixel_util_LabelValuePair.h"/>
+   <depend name="include/flixel/util/FlxStringUtil.h"/>
+   <depend name="include/flixel/util/LabelValuePair.h"/>
+  </file>
+  <file name="src/flixel/interfaces/IFlxDestroyable.cpp">
+   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
+  </file>
   <file name="src/DocumentClass.cpp">
    <depend name="include/DocumentClass.h"/>
    <depend name="include/Main.h"/>
@@ -3029,8 +3034,8 @@
    <depend name="include/flash/events/IEventDispatcher.h"/>
   </file>
   <file name="src/Main.cpp">
+   <depend name="include/BadingState.h"/>
    <depend name="include/Main.h"/>
-   <depend name="include/MenuState.h"/>
    <depend name="include/flash/Lib.h"/>
    <depend name="include/flash/display/DisplayObject.h"/>
    <depend name="include/flash/display/DisplayObjectContainer.h"/>

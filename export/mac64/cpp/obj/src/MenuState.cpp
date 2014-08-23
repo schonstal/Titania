@@ -6,6 +6,15 @@
 #ifndef INCLUDED_flixel_FlxBasic
 #include <flixel/FlxBasic.h>
 #endif
+#ifndef INCLUDED_flixel_FlxG
+#include <flixel/FlxG.h>
+#endif
+#ifndef INCLUDED_flixel_FlxObject
+#include <flixel/FlxObject.h>
+#endif
+#ifndef INCLUDED_flixel_FlxSprite
+#include <flixel/FlxSprite.h>
+#endif
 #ifndef INCLUDED_flixel_FlxState
 #include <flixel/FlxState.h>
 #endif
@@ -17,6 +26,9 @@
 #endif
 #ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
 #include <flixel/interfaces/IFlxDestroyable.h>
+#endif
+#ifndef INCLUDED_flixel_text_FlxText
+#include <flixel/text/FlxText.h>
 #endif
 
 Void MenuState_obj::__construct(Dynamic MaxSize)
@@ -47,9 +59,15 @@ Dynamic MenuState_obj::__Create(hx::DynamicArray inArgs)
 
 Void MenuState_obj::create( ){
 {
-		HX_STACK_FRAME("MenuState","create",0xe57b7c18,"MenuState.create","MenuState.hx",20,0xdfbcb22c)
+		HX_STACK_FRAME("MenuState","create",0xe57b7c18,"MenuState.create","MenuState.hx",15,0xdfbcb22c)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(20)
+		HX_STACK_LINE(16)
+		::flixel::text::FlxText text = ::flixel::text::FlxText_obj::__new((int)0,(int)0,::flixel::FlxG_obj::width,HX_CSTRING("test"),null(),null());		HX_STACK_VAR(text,"text");
+		HX_STACK_LINE(17)
+		text->setFormat(HX_CSTRING("assets/fonts/04b03.ttf"),null(),null(),null(),null(),null(),null());
+		HX_STACK_LINE(18)
+		this->add(text);
+		HX_STACK_LINE(19)
 		this->super::create();
 	}
 return null();
@@ -58,9 +76,9 @@ return null();
 
 Void MenuState_obj::destroy( ){
 {
-		HX_STACK_FRAME("MenuState","destroy",0xf9ac905e,"MenuState.destroy","MenuState.hx",29,0xdfbcb22c)
+		HX_STACK_FRAME("MenuState","destroy",0xf9ac905e,"MenuState.destroy","MenuState.hx",23,0xdfbcb22c)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(29)
+		HX_STACK_LINE(23)
 		this->super::destroy();
 	}
 return null();
@@ -69,9 +87,9 @@ return null();
 
 Void MenuState_obj::update( ){
 {
-		HX_STACK_FRAME("MenuState","update",0xf0719b25,"MenuState.update","MenuState.hx",37,0xdfbcb22c)
+		HX_STACK_FRAME("MenuState","update",0xf0719b25,"MenuState.update","MenuState.hx",27,0xdfbcb22c)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(37)
+		HX_STACK_LINE(27)
 		this->super::update();
 	}
 return null();
