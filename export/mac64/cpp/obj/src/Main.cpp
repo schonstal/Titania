@@ -1,10 +1,10 @@
 #include <hxcpp.h>
 
+#ifndef INCLUDED_BadingState
+#include <BadingState.h>
+#endif
 #ifndef INCLUDED_Main
 #include <Main.h>
-#endif
-#ifndef INCLUDED_MenuState
-#include <MenuState.h>
 #endif
 #ifndef INCLUDED_flash_Lib
 #include <flash/Lib.h>
@@ -69,17 +69,17 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(19)
 	this->startFullscreen = false;
 	HX_STACK_LINE(18)
-	this->skipSplash = false;
+	this->skipSplash = true;
 	HX_STACK_LINE(17)
 	this->framerate = (int)60;
 	HX_STACK_LINE(16)
 	this->zoom = (int)-1;
 	HX_STACK_LINE(15)
-	this->initialState = hx::ClassOf< ::MenuState >();
+	this->initialState = hx::ClassOf< ::BadingState >();
 	HX_STACK_LINE(14)
-	this->gameHeight = (int)480;
+	this->gameHeight = (int)240;
 	HX_STACK_LINE(13)
-	this->gameWidth = (int)640;
+	this->gameWidth = (int)320;
 	HX_STACK_LINE(30)
 	super::__construct();
 	HX_STACK_LINE(32)

@@ -38,10 +38,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		path.set ("assets/data/data-goes-here.txt", "assets/data/data-goes-here.txt");
 		type.set ("assets/data/data-goes-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		path.set ("assets/fonts/04b03.ttf", "assets/fonts/04b03.ttf");
+		type.set ("assets/fonts/04b03.ttf", Reflect.field (AssetType, "font".toUpperCase ()));
 		path.set ("assets/images/images-go-here.txt", "assets/images/images-go-here.txt");
 		type.set ("assets/images/images-go-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		path.set ("assets/images/logo.png", "assets/images/logo.png");
+		type.set ("assets/images/logo.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("assets/music/music-goes-here.txt", "assets/music/music-goes-here.txt");
 		type.set ("assets/music/music-goes-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		path.set ("assets/sounds/bading.mp3", "assets/sounds/bading.mp3");
+		type.set ("assets/sounds/bading.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 		path.set ("assets/sounds/sounds-go-here.txt", "assets/sounds/sounds-go-here.txt");
 		type.set ("assets/sounds/sounds-go-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		path.set ("assets/sounds/beep.ogg", "assets/sounds/beep.ogg");
@@ -59,6 +65,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var loadManifest = false;
+		loadManifest = true;
+		loadManifest = true;
+		loadManifest = true;
 		loadManifest = true;
 		loadManifest = true;
 		loadManifest = true;
@@ -656,7 +665,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
 #elseif html5
+
+
+@:keep class __ASSET__assets_fonts_04b03_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "assets/fonts/04b03.ttf"; } #end }
 
 
 
