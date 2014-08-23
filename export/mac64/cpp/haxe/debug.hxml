@@ -1,0 +1,19 @@
+-main ApplicationMain 
+-lib flixel
+-lib openfl
+-lib openfl-native
+-lib hxcpp
+-cp source
+-D tools=1.4.0
+-D FLX_NO_DEBUG
+-D lime_native
+-D no-compilation
+-D NAPE_RELEASE_BUILD
+-D FLX_RENDER_TILE
+-D mac
+-D desktop
+--macro allowPackage('flash')
+-cpp export/mac64/cpp/obj/
+-cp export/mac64/cpp/haxe
+--macro keep("Main")
+-debug
