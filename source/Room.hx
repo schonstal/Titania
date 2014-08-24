@@ -34,6 +34,10 @@ class Room extends TiledMap
   public var backgroundTiles:FlxGroup;
   public var exits:FlxGroup;
   public var doors:FlxGroup;
+  public var terminals:FlxGroup;
+  public var doorSymbols:FlxGroup;
+  public var doorTriggers:FlxGroup;
+  public var terminalSymbols:FlxGroup;
   public var background:FlxSprite;
 
   private var collidableTileLayers:Array<FlxTilemap>;
@@ -46,6 +50,10 @@ class Room extends TiledMap
     backgroundTiles = new FlxGroup();
     exits = new FlxGroup();
     doors = new FlxGroup();
+    doorSymbols = new FlxGroup();
+    doorTriggers = new FlxGroup();
+    terminalSymbols = new FlxGroup();
+    terminals = new FlxGroup();
     
     // Load Tile Maps
     for (tileLayer in layers) {
@@ -122,6 +130,18 @@ class Room extends TiledMap
       case "exit":
         var exit = new ExitObject(x, y, o.width, o.height, o.custom.get("room"));
         exits.add(exit);
+      case "door":
+        var door = new Door(x, y, Std.parseInt(o.custom.get("id")));
+        var doorSymbol = new DoorSymbol(x, y, Std.parseInt(o.custom.get("id")));
+        doors.add(door);
+        doorSymbols.add(doorSymbol);
+/*        var doorTrigger = new DoorTrigger(x - DoorTrigger.WIDTH, y + (48 - DoorTrigger.HEIGHT), door);
+        doorTriggers.add(doorTrigger);*/
+      case "terminal":
+        var terminal = new Terminal(x, y, Std.parseInt(o.custom.get("id")));
+        var doorSymbol = new DoorSymbol(x, y, Std.parseInt(o.custom.get("id")));
+        terminals.add(terminal);
+        terminalSymbols.add(doorSymbol);
     }
   }
   

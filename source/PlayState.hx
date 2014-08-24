@@ -25,6 +25,7 @@ class PlayState extends FlxState
                        fileName,
                        new Room("assets/tilemaps/iteration/" + Reg.level + "/" + fileName + ".tmx"));
     }
+    Reg.openDoors = [];
 
     player = new Player();
     player.init();
@@ -60,6 +61,7 @@ class PlayState extends FlxState
 
     checkExits();
     touchWalls();
+    touchDoors();
   }
 
   private function touchWalls():Void {
@@ -67,6 +69,16 @@ class PlayState extends FlxState
       if((player.touching & FlxObject.FLOOR) > 0) {
         player.setCollidesWith(Player.WALL_UP);
       }
+    });
+  }
+
+  private function touchDoors():Void {
+    FlxG.collide(activeRoom.doors, player);
+    FlxG.overlap(activeRoom.terminals, player, function(terminal:Terminal, player:Player):Void {
+      Reg.openDoors[terminal.id] = true;
+    });
+    FlxG.overlap(activeRoom.doorTriggers, player, function(doorTrigger:DoorTrigger, player:Player):Void {
+      doorTrigger.openDoor();
     });
   }
 
@@ -88,15 +100,25 @@ class PlayState extends FlxState
       remove(activeRoom.foregroundTiles);
       remove(activeRoom.exits);
       remove(activeRoom.background);
+      remove(activeRoom.doors);
+      remove(activeRoom.terminals);
+      remove(activeRoom.terminalSymbols);
+      remove(activeRoom.doorSymbols);
+      remove(activeRoom.doorTriggers);
     }
     remove(player);
 
     activeRoom = Reflect.field(rooms, roomName);
     activeRoom.loadObjects(this);
     add(activeRoom.background);
+    add(activeRoom.terminals);
+    add(activeRoom.terminalSymbols);
     add(player);
     add(activeRoom.foregroundTiles);
     add(activeRoom.exits);
+    add(activeRoom.doors);
+    add(activeRoom.doorSymbols);
+    add(activeRoom.doorTriggers);
 
     Reg.palette = Std.parseInt(activeRoom.properties.palette);
   }

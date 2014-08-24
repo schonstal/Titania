@@ -20,4 +20,6 @@ class Reg
 
   // Which color palette to use
   public static var palette:Int = 0;
+
+  public static var openDoors:Array<Null<Bool>> = [];
 }
