@@ -25,6 +25,9 @@ class Room extends TiledMap
   // used to draw tiles in that layer (without file extension).
   // The image file must be located in the directory specified bellow.
   private inline static var c_PATH_LEVEL_TILESHEETS = "assets/images/tiles/";
+
+  // Do we reload objects?
+  public var dirty:Bool = true;
   
   // Array of tilemaps used for collision
   public var foregroundTiles:FlxGroup;
@@ -91,11 +94,14 @@ class Room extends TiledMap
   } // new()
   
   public function loadObjects(state:PlayState) {
+    if (!dirty) return;
+
     for (group in objectGroups) {
       for (o in group.objects) {
         loadObject(o, group, state);
       }
     }
+    dirty = false;
   }
   
   private function loadObject(o:TiledObject, g:TiledObjectGroup, state:PlayState) {
@@ -106,8 +112,6 @@ class Room extends TiledMap
     if (o.gid != -1) {
       y -= g.map.getGidOwner(o.gid).tileHeight;
     }
-    
-    trace(o.type);
     
     switch (o.type.toLowerCase()) {
       case "exit":

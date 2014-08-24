@@ -19,7 +19,6 @@ class PlayState extends FlxState
     super.create();
     rooms.quarters = new Room("assets/tilemaps/quarters.tmx");
     rooms.hub = new Room("assets/tilemaps/hub.tmx");
-    rooms.quarters.loadObjects(this);
 
     player = new Player();
     player.init();
@@ -53,6 +52,11 @@ class PlayState extends FlxState
     
     player.resetFlags();
 
+    checkExits();
+    touchWalls();
+  }
+
+  private function touchWalls():Void {
     FlxG.collide(activeRoom.foregroundTiles, player, function(tile:FlxObject, player:Player):Void {
       if((player.touching & FlxObject.FLOOR) > 0) {
         player.setCollidesWith(Player.WALL_UP);
@@ -60,11 +64,26 @@ class PlayState extends FlxState
     });
   }
 
+  private function checkExits():Void {
+    FlxG.overlap(activeRoom.exits, player, function(exit:ExitObject, player:Player):Void {
+      if(player.x < 0) {
+        player.x = FlxG.camera.width - player.width;
+        switchRoom(exit.roomName);
+      } else if(player.x + player.width > FlxG.camera.width) {
+        player.x = 0;
+        switchRoom(exit.roomName);
+      }
+    });
+  }
+
   public function switchRoom(roomName:String):Void {
     if (activeRoom != null) {
       remove(activeRoom.foregroundTiles);
+      remove(activeRoom.exits);
     }
     activeRoom = Reflect.field(rooms, roomName);
+    activeRoom.loadObjects(this);
     add(activeRoom.foregroundTiles);
+    add(activeRoom.exits);
   }
 }

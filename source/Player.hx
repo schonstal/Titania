@@ -210,9 +210,6 @@ class Player extends FlxSprite
       }
     }
     super.update();
-
-    if(x < 0) x = FlxG.camera.width - width;
-    if(x + width > FlxG.camera.width) x = 0;
   }
 
   public function jumpPressed():Bool {
