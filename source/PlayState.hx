@@ -7,6 +7,7 @@ import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.addons.effects.FlxGlitchSprite;
+import flixel.system.FlxSound;
 
 class PlayState extends FlxState
 {
@@ -14,6 +15,8 @@ class PlayState extends FlxState
   var glitchSprite:GlitchSprite;
   var player:Player;
   var activeRoom:Room;
+
+  var iterationMusic:FlxSound;
 
   override public function create():Void {
     super.create();
@@ -35,6 +38,8 @@ class PlayState extends FlxState
     add(glitchSprite);
 
     FlxG.debugger.drawDebug = true;
+    //FlxG.sound.playMusic("assets/sounds/spacestation.mp3", 1, true);
+    iterationMusic = FlxG.sound.load("assets/music/uhoh.mp3", 1, true);
   }
   
   override public function destroy():Void {
@@ -46,6 +51,7 @@ class PlayState extends FlxState
       Reg.palette = 1;
     }
     if (FlxG.keys.justPressed.SPACE) {
+      FlxG.sound.muted = true;
       glitchSprite.glitchOut();
     }
     super.update();
@@ -69,11 +75,10 @@ class PlayState extends FlxState
       if(player.x < 0) {
         player.x = FlxG.camera.width - player.width;
         switchRoom(exit.roomName);
-        Reg.palette = 0;
       } else if(player.x + player.width > FlxG.camera.width) {
+        iterationMusic.play();
         player.x = 0;
         switchRoom(exit.roomName);
-        Reg.palette = 1;
       }
     });
   }
@@ -87,5 +92,7 @@ class PlayState extends FlxState
     activeRoom.loadObjects(this);
     add(activeRoom.foregroundTiles);
     add(activeRoom.exits);
+
+    Reg.palette = Std.parseInt(activeRoom.properties.palette);
   }
 }

@@ -11,6 +11,7 @@ class BadingState extends FlxState
 
   override public function create():Void {
     super.create();
+    FlxG.sound.muted = false;
 
     var badingSprite:FlxSprite = new FlxSprite();
     badingSprite.loadGraphic("assets/images/logo.png");
