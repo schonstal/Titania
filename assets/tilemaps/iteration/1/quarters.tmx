@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="15" tilewidth="16" tileheight="16">
+ <properties>
+  <property name="palette" value="1"/>
+ </properties>
+ <tileset firstgid="1" name="walls" tilewidth="16" tileheight="16">
+  <image source="../images/tiles/walls.png" width="320" height="240"/>
+ </tileset>
+ <layer name="walls" width="20" height="15">
+  <properties>
+   <property name="tileset" value="walls"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJyTZGBgkBzFo3iYYUYgZgLiNBw0CDOTYJ4UA2GgAzVXF8kOXTQaZp4oEeYRA2hlniYQa0ExKxIbH7ZDo7UYKI9HdAwAiX8agg==
+  </data>
+ </layer>
+ <objectgroup color="#00a400" name="exits" width="20" height="15">
+  <object type="exit" x="304" y="176" width="16" height="32">
+   <properties>
+    <property name="room" value="hub"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
