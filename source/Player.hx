@@ -8,8 +8,8 @@ import flixel.system.FlxSound;
 
 class Player extends FlxSprite
 {
-  public static var START_X:Float = 57;
-  public static var START_Y:Float = 172;
+  public static var START_X:Float = 87;
+  public static var START_Y:Float = 190;
 
   public static var WALL_LEFT:Int = 1 << 1;
   public static var WALL_RIGHT:Int = 1 << 2;
