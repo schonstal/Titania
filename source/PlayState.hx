@@ -17,8 +17,11 @@ class PlayState extends FlxState
 
   override public function create():Void {
     super.create();
-    rooms.quarters = new Room("assets/tilemaps/quarters.tmx");
-    rooms.hub = new Room("assets/tilemaps/hub.tmx");
+    for(fileName in Reg.rooms) {
+      Reflect.setField(rooms,
+                       fileName,
+                       new Room("assets/tilemaps/iteration/" + Reg.level + "/" + fileName + ".tmx"));
+    }
 
     player = new Player();
     player.init();
