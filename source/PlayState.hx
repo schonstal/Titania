@@ -15,6 +15,7 @@ class PlayState extends FlxState
   var glitchSprite:GlitchSprite;
   var player:Player;
   var activeRoom:Room;
+  var speechGroup:SpeechGroup;
 
   var iterationMusic:FlxSound;
 
@@ -33,14 +34,17 @@ class PlayState extends FlxState
 
     switchRoom("quarters");
 
-    //FX
+    //Palette Swap
     add(new EffectSprite());
+    speechGroup = new SpeechGroup();
+    add(speechGroup);
+
+    //Glitch out
     glitchSprite = new GlitchSprite();
     add(glitchSprite);
 
     FlxG.debugger.drawDebug = true;
-    //FlxG.sound.playMusic("assets/sounds/spacestation.mp3", 1, true);
-    iterationMusic = FlxG.sound.load("assets/music/uhoh.mp3", 1, true);
+    //FlxG.sound.play("assets/music/level1.mp3", 1, true);
   }
   
   override public function destroy():Void {
@@ -52,8 +56,9 @@ class PlayState extends FlxState
       Reg.palette = 1;
     }
     if (FlxG.keys.justPressed.SPACE) {
-      FlxG.sound.muted = true;
-      glitchSprite.glitchOut();
+      //FlxG.sound.muted = true;
+      //glitchSprite.glitchOut();
+      speechGroup.say("butts\nnuts##wub wub wub!");
     }
     super.update();
     
@@ -88,7 +93,6 @@ class PlayState extends FlxState
         player.x = FlxG.camera.width - player.width;
         switchRoom(exit.roomName);
       } else if(player.x + player.width > FlxG.camera.width) {
-        iterationMusic.play();
         player.x = 0;
         switchRoom(exit.roomName);
       }
