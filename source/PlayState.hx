@@ -40,10 +40,7 @@ class PlayState extends FlxState
 
   override public function update():Void {
     if (FlxG.keys.justPressed.RIGHT) {
-      switchRoom("hub");
-    }
-    if (FlxG.keys.justPressed.LEFT) {
-      switchRoom("quarters");
+      Reg.palette = 1;
     }
     if (FlxG.keys.justPressed.SPACE) {
       glitchSprite.glitchOut();
