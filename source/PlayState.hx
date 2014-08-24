@@ -39,5 +39,5 @@ class PlayState extends FlxState
       glitchSprite.glitchOut();
     }
     super.update();
-  } 
+  }
 }
