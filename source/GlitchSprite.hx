@@ -52,6 +52,7 @@ class GlitchSprite extends FlxGroup
   }
 
   override public function draw():Void {
+    if(verticalGlitch == null) return;
 #if flash
     sprite.framePixels.copyPixels(FlxG.camera.buffer, FlxG.camera.buffer.rect, new Point());
 #else

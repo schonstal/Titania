@@ -33,6 +33,7 @@ class Room extends TiledMap
   public var foregroundTiles:FlxGroup;
   public var backgroundTiles:FlxGroup;
   public var exits:FlxGroup;
+  public var doors:FlxGroup;
   public var background:FlxSprite;
 
   private var collidableTileLayers:Array<FlxTilemap>;
@@ -44,6 +45,7 @@ class Room extends TiledMap
     foregroundTiles = new FlxGroup();
     backgroundTiles = new FlxGroup();
     exits = new FlxGroup();
+    doors = new FlxGroup();
     
     // Load Tile Maps
     for (tileLayer in layers) {
