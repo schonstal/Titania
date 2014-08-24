@@ -11,7 +11,7 @@ class EffectSprite extends FlxSprite
 {
   public function new() {
     super(0,0);
-    makeGraphic(FlxG.width, FlxG.height, FlxColor.ORANGE);//TRANSPARENT);
+    makeGraphic(FlxG.width, FlxG.height, FlxColor.TRANSPARENT);
   }
 
   override public function draw():Void {
