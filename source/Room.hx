@@ -29,13 +29,17 @@ class Room extends TiledMap
   // Array of tilemaps used for collision
   public var foregroundTiles:FlxGroup;
   public var backgroundTiles:FlxGroup;
+  public var exits:FlxGroup;
+
   private var collidableTileLayers:Array<FlxTilemap>;
+
   
   public function new(tiles:Dynamic) {
     super(tiles);
     
     foregroundTiles = new FlxGroup();
     backgroundTiles = new FlxGroup();
+    exits = new FlxGroup();
     
     // Load Tile Maps
     for (tileLayer in layers) {
@@ -103,37 +107,13 @@ class Room extends TiledMap
       y -= g.map.getGidOwner(o.gid).tileHeight;
     }
     
-      /*
+    trace(o.type);
+    
     switch (o.type.toLowerCase()) {
-      case "player_start":
-        var player = new FlxSprite(x, y);
-        player.makeGraphic(32, 32, 0xffaa1111);
-        player.maxVelocity.x = 160;
-        player.maxVelocity.y = 400;
-        player.acceleration.y = 400;
-        player.drag.x = player.maxVelocity.x * 4;
-        FlxG.camera.follow(player);
-        state.player = player;
-        state.add(player);
-        
-      case "floor":
-        var floor = new FlxObject(x, y, o.width, o.height);
-        state.floor = floor;
-        
-      case "coin":
-        var tileset = g.map.getGidOwner(o.gid);
-        var coin = new FlxSprite(x, y, c_PATH_LEVEL_TILESHEETS + tileset.imageSource);
-        state.coins.add(coin);
-        
       case "exit":
-        // Create the level exit
-        var exit = new FlxSprite(x, y);
-        exit.makeGraphic(32, 32, 0xff3f3f3f);
-        exit.exists = false;
-        state.exit = exit;
-        state.add(exit);
+        var exit = new ExitObject(x, y, o.width, o.height, o.custom.get("room"));
+        exits.add(exit);
     }
-      */
   }
   
   public function collideWithLevel(obj:FlxObject,
