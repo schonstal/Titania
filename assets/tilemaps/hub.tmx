@@ -8,7 +8,7 @@
    <property name="tileset" value="walls"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJyTZGBgkETDUgwIIIFFnljMCMRMQKyHZJ4OVEwXSqeh0cw4zElDM4dYoAPVi2yuFF4dxAFxqFno/iMXwMJlsAMtKGYFYjYy9LNA9bJCzcGVTogFsHBDjl9RMsxBB8TEL8wvWkg0rjAhJn5hdiJjSvxCjnlaSNgOjdbGYp4mDrUwTG7ZgQsDAHmtDo4=
+   eJzNlN0NgCAMhOvvBkZhAxAdwXHYfwQhaUPTiBL0wUu+lIAccBgUACiBhqTlYryUJtAGdubnsG/D6kXtMj5e+JTK4Vzuq29nlGlGL3m+WlEuf5cNjB/49OgVM5w+8KP7iBio32fc1xBYId0vUfv/cY+StS0S22+y5pkQT1lbxiEqZcIxmW+J2rcjxwl5Dg34
   </data>
  </layer>
  <objectgroup color="#00a42e" name="exits" width="20" height="15">
