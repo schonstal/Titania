@@ -87,9 +87,14 @@ class PlayState extends FlxState
     if (activeRoom != null) {
       remove(activeRoom.foregroundTiles);
       remove(activeRoom.exits);
+      remove(activeRoom.background);
     }
+    remove(player);
+
     activeRoom = Reflect.field(rooms, roomName);
     activeRoom.loadObjects(this);
+    add(activeRoom.background);
+    add(player);
     add(activeRoom.foregroundTiles);
     add(activeRoom.exits);
 

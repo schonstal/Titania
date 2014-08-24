@@ -33,6 +33,7 @@ class Room extends TiledMap
   public var foregroundTiles:FlxGroup;
   public var backgroundTiles:FlxGroup;
   public var exits:FlxGroup;
+  public var background:FlxSprite;
 
   private var collidableTileLayers:Array<FlxTilemap>;
 
@@ -91,6 +92,8 @@ class Room extends TiledMap
         collidableTileLayers.push(tilemap);
       }
     }
+    background = new FlxSprite();
+    background.loadGraphic("assets/images/backgrounds/" + properties.background + ".png");
   } // new()
   
   public function loadObjects(state:PlayState) {
