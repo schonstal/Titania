@@ -1,6 +1,7 @@
 package;
 
 import flixel.FlxG;
+import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
@@ -11,15 +12,25 @@ class PlayState extends FlxState
 {
   var rooms:Dynamic = {};
   var glitchSprite:GlitchSprite;
+  var player:Player;
 
   override public function create():Void {
     super.create();
     rooms.quarters = new Room("assets/tilemaps/quarters.tmx");
     rooms.hub = new Room("assets/tilemaps/hub.tmx");
+
+    player = new Player();
+    player.init();
+    add(player);
+
     add(rooms.quarters.foregroundTiles);
+
+    //FX
     add(new EffectSprite());
     glitchSprite = new GlitchSprite();
     add(glitchSprite);
+
+    FlxG.debugger.drawDebug = true;
   }
   
   override public function destroy():Void {
@@ -39,5 +50,13 @@ class PlayState extends FlxState
       glitchSprite.glitchOut();
     }
     super.update();
+    
+    player.resetFlags();
+
+    FlxG.collide(rooms.quarters.foregroundTiles, player, function(tile:FlxObject, player:Player):Void {
+      if((player.touching & FlxObject.FLOOR) > 0) {
+        player.setCollidesWith(Player.WALL_UP);
+      }
+    });
   }
 }
