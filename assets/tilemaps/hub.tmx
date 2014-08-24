@@ -11,4 +11,11 @@
    eJyTZGBgkETDUgwIIIFFnhBmBGImIE6D0npI5ulAxXTR1KDTzEjmiTJQDpD9IUVALTFAHGoWuv/IBbBwGexAC4pZgZiNDP0sUL2sUHOQ0ws54QgLN2qnF2LiF+YXLSQaV5gQE78wO5ExJX4hxzwtJGyHRmtjMU8Th1oYJrXsIIQBY18N/Q==
   </data>
  </layer>
+ <objectgroup color="#00a42e" name="exits" width="20" height="15">
+  <object type="exit" x="0" y="176" width="16" height="32">
+   <properties>
+    <property name="room" value="quarters"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

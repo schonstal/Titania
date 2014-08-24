@@ -11,4 +11,11 @@
    eJyTZGBgkBzFo3iYYUYgZgLiNBw0CDOTYJ4UA2Ggg2Q2DOui2QszT5QI84gBtDJPE4i1oJgViY0Ls+JgUzteAWy/Gh4=
   </data>
  </layer>
+ <objectgroup color="#00a400" name="exits" width="20" height="15">
+  <object type="exit" x="304" y="176" width="16" height="32">
+   <properties>
+    <property name="room" value="hub"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
