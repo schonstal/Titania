@@ -32,7 +32,7 @@
     <property name="id" value="1"/>
    </properties>
   </object>
-  <object type="terminal" gid="307" x="96" y="208">
+  <object type="terminal" gid="307" x="256" y="208">
    <properties>
     <property name="id" value="1"/>
    </properties>
