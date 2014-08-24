@@ -66,9 +66,11 @@ class PlayState extends FlxState
       if(player.x < 0) {
         player.x = FlxG.camera.width - player.width;
         switchRoom(exit.roomName);
+        Reg.palette = 0;
       } else if(player.x + player.width > FlxG.camera.width) {
         player.x = 0;
         switchRoom(exit.roomName);
+        Reg.palette = 1;
       }
     });
   }

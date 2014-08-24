@@ -40,8 +40,9 @@ class EffectSprite extends FlxSprite
     for(x in 0...cast(paletteSprite.width,Int)) {
       var pixel:Int = paletteSprite.pixels.getPixel(x,0);
       var palettePixel:Int = paletteSprite.pixels.getPixel(x,Reg.palette);
-      redArray[(pixel & 0xff0000) >> 16] = (palettePixel & 0xff0000) >> 16;
-      greenArray[(pixel & 0xff00) >> 8] = (palettePixel & 0xff00) >> 8;
+
+      redArray[(pixel & 0xff0000) >> 16] = palettePixel & 0xff0000;
+      greenArray[(pixel & 0xff00) >> 8] = palettePixel & 0xff00;
       blueArray[pixel & 0xff] = palettePixel & 0xff;
     }
 
