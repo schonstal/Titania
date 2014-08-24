@@ -51,13 +51,13 @@ class Player extends FlxSprite
   public function new(X:Float=0,Y:Float=0) {
     super(X,Y);
     loadGraphic("assets/images/player.png", true, 32, 32);
-    animation.add("idle", [0, 0, 0, 0, 0, 0, 1, 2, 3], 15, true);
+    animation.add("idle", [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2], 15, true);
     animation.add("run", [6, 7, 8, 9, 10, 11], 15, true);
-    animation.add("run from landing", [8, 9, 10, 11, 6, 7], 15, true);
+    animation.add("run from landing", [10, 11, 6, 7, 8, 9], 15, true);
     animation.add("jump start", [12], 15, true);
     animation.add("jump peak", [13], 15, true);
     animation.add("jump fall", [14], 15, true);
-    animation.add("jump land", [15], 15, false);
+    animation.add("jump land", [9], 15, false);
     animation.add("die", [18]);
     animation.play("idle");
 
@@ -77,6 +77,8 @@ class Player extends FlxSprite
     maxVelocity.x = RUN_SPEED;
 
     jumpSound = FlxG.sound.load("assets/sounds/jump.wav");
+    setFacingFlip(FlxObject.LEFT, true, false);
+    setFacingFlip(FlxObject.RIGHT, false, false);
   }
 
   public function init():Void {

@@ -13,17 +13,19 @@ class PlayState extends FlxState
   var rooms:Dynamic = {};
   var glitchSprite:GlitchSprite;
   var player:Player;
+  var activeRoom:Room;
 
   override public function create():Void {
     super.create();
     rooms.quarters = new Room("assets/tilemaps/quarters.tmx");
     rooms.hub = new Room("assets/tilemaps/hub.tmx");
+    rooms.quarters.loadObjects(this);
 
     player = new Player();
     player.init();
     add(player);
 
-    add(rooms.quarters.foregroundTiles);
+    switchRoom("quarters");
 
     //FX
     add(new EffectSprite());
@@ -39,12 +41,10 @@ class PlayState extends FlxState
 
   override public function update():Void {
     if (FlxG.keys.justPressed.RIGHT) {
-      remove(rooms.quarters.foregroundTiles);
-      add(rooms.hub.foregroundTiles);
+      switchRoom("hub");
     }
     if (FlxG.keys.justPressed.LEFT) {
-      remove(rooms.hub.foregroundTiles);
-      add(rooms.quarters.foregroundTiles);
+      switchRoom("quarters");
     }
     if (FlxG.keys.justPressed.SPACE) {
       glitchSprite.glitchOut();
@@ -53,10 +53,18 @@ class PlayState extends FlxState
     
     player.resetFlags();
 
-    FlxG.collide(rooms.quarters.foregroundTiles, player, function(tile:FlxObject, player:Player):Void {
+    FlxG.collide(activeRoom.foregroundTiles, player, function(tile:FlxObject, player:Player):Void {
       if((player.touching & FlxObject.FLOOR) > 0) {
         player.setCollidesWith(Player.WALL_UP);
       }
     });
+  }
+
+  public function switchRoom(roomName:String):Void {
+    if (activeRoom != null) {
+      remove(activeRoom.foregroundTiles);
+    }
+    activeRoom = Reflect.field(rooms, roomName);
+    add(activeRoom.foregroundTiles);
   }
 }
