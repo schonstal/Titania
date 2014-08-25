@@ -47,6 +47,11 @@
     <property name="id" value="1"/>
    </properties>
   </object>
+  <object type="exit" x="304" y="80" width="16" height="64">
+   <properties>
+    <property name="room" value="jump"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup color="#ffd010" name="dialog" width="20" height="15">
   <object type="dialog" x="64" y="176" width="48" height="32">
