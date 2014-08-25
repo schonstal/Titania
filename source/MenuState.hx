@@ -13,6 +13,7 @@ class MenuState extends FlxState
 {
   var menuGraphic:FlxSprite;
   var startGameButton:FlxButton;
+  var effectSprite:EffectSprite;
 
   override public function create():Void {
     menuGraphic = new FlxSprite();
@@ -31,7 +32,11 @@ class MenuState extends FlxState
     FlxG.debugger.drawDebug = true;
     super.create();
 
-    add(new EffectSprite());
+    add(new Cursor());
+
+    effectSprite = new EffectSprite();
+    effectSprite.paletteRate = 0.2;
+    add(effectSprite);
   }
   
   override public function destroy():Void {

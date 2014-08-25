@@ -41,6 +41,7 @@ class Room extends TiledMap
   public var images:FlxGroup;
   public var crashers:FlxGroup;
   public var dialogs:FlxGroup;
+  public var pellets:FlxGroup;
   public var background:FlxSprite;
 
   private var collidableTileLayers:Array<FlxTilemap>;
@@ -60,6 +61,7 @@ class Room extends TiledMap
     images = new FlxGroup();
     crashers = new FlxGroup();
     dialogs = new FlxGroup();
+    pellets = new FlxGroup();
     
     // Load Tile Maps
     for (tileLayer in layers) {
@@ -157,6 +159,9 @@ class Room extends TiledMap
       case "dialog":
         var dialog:Dialog = new Dialog(x, y, o.width, o.height, o.custom.get("text"));
         dialogs.add(dialog);
+      case "pellet":
+        var pellet:Pellet = new Pellet(x, y);
+        pellets.add(pellet);
     }
   }
   

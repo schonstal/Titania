@@ -21,7 +21,7 @@ class Reg
   public static var saves:Array<FlxSave> = [];
 
   // Which color palette to use
-  public static var palette:Int = 0;
+  public static var palette:Int = 1;
 
   public static var openDoors:Array<Null<Bool>> = [];
   public static var currentDoor:Int = 0;

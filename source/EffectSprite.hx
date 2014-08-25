@@ -63,7 +63,7 @@ class EffectSprite extends FlxSprite
 #else
     pixels.draw(FlxG.camera.canvas, new Matrix(1, 0, 0, 1, 0, 0));
 #end
-    for(i in 0...255) {
+    for(i in 0...256) {
         redArray[i] = i << 16;
         greenArray[i] = i << 8;
         blueArray[i] = i;

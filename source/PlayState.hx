@@ -78,6 +78,7 @@ class PlayState extends FlxState
     touchWalls();
     touchDoors();
     checkDialogs();
+    checkPellets();
   }
 
   private function touchWalls():Void {
@@ -101,9 +102,9 @@ class PlayState extends FlxState
   private function checkExits():Void {
     FlxG.overlap(activeRoom.exits, player, function(exit:ExitObject, player:Player):Void {
       if(player.x < 0) {
-        player.x = FlxG.camera.width - player.width;
+        player.x = 320 - player.width;
         switchRoom(exit.roomName);
-      } else if(player.x + player.width > FlxG.camera.width) {
+      } else if(player.x + player.width > 320) {
         player.x = 0;
         switchRoom(exit.roomName);
       }
@@ -114,9 +115,14 @@ class PlayState extends FlxState
     FlxG.overlap(activeRoom.dialogs, player, function(dialog:Dialog, player:Player):Void {
       if (!dialog.triggered) {
         dialog.triggered = true;
-        if(Reg.level < 3)
         speechGroup.say(dialog.text);
       }
+    });
+  }
+
+  private function checkPellets():Void {
+    FlxG.overlap(activeRoom.pellets, player, function(pellet:Pellet, player:Player):Void {
+      pellet.onCollisionEnter();
     });
   }
 
@@ -140,6 +146,7 @@ class PlayState extends FlxState
       remove(activeRoom.doors);
       remove(activeRoom.terminals);
       remove(activeRoom.terminalSymbols);
+      remove(activeRoom.pellets);
       remove(activeRoom.doorSymbols);
       remove(activeRoom.doorTriggers);
       remove(activeRoom.crashers);
@@ -154,6 +161,7 @@ class PlayState extends FlxState
     add(activeRoom.terminals);
     add(activeRoom.terminalSymbols);
     add(player);
+    add(activeRoom.pellets);
     add(activeRoom.foregroundTiles);
     add(activeRoom.exits);
     add(activeRoom.doors);

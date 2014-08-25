@@ -30,6 +30,7 @@ class BadingState extends FlxState
         FlxG.switchState(new MenuState());
       });
     });
+    FlxG.mouse.visible = false;
   }
   
   override public function update():Void {
