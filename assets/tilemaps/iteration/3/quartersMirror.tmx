@@ -24,38 +24,19 @@
    <property name="tileset" value="walls"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJyTZGBgkBzFo3iEYEYg1gViJiBOw0EzI6lnQlIPo5GxHgNhII5kHjWABJXNQ3afFhTbodEgzIqDjY61GWgXfwBzMxpj
+   eJy1U8ENwyAQo0iwQVSxQq/JMszQdv8NGiQjWRbheLRIli/gOx8QcgihEBLYZH6EpqmIo5OToSkL+kSaInGi9Sp5ceKvtXtPnkZrx4V87W3ljNRT95JFNzqjUW6P9axm4L16/4FdaLSvWb/cW6a6V36el3ryPd3gZ8h7g5/gDej5keYj4XXiALyxk/8vxv1P9dq+Hic+4IYdvIErrfW5A2zE+jb6HXv3x+/A5LvV+AKw9hos
   </data>
  </layer>
  <objectgroup color="#00a400" name="exits" width="20" height="15">
-  <object type="exit" x="0" y="176" width="16" height="32">
-   <properties>
-    <property name="room" value="hub"/>
-   </properties>
-  </object>
   <object type="door" gid="301" x="0" y="208">
    <properties>
     <property name="id" value="1"/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="things" width="20" height="15">
-  <object type="terminal" gid="307" x="256" y="208">
-   <properties>
-    <property name="id" value="2"/>
-   </properties>
-  </object>
-  <object type="image" gid="309" x="168" y="208">
-   <properties>
-    <property name="file" value="bed2"/>
-   </properties>
-  </object>
- </objectgroup>
- <objectgroup color="#d2ab30" name="dialog" width="20" height="15">
-  <object type="dialog" x="32" y="176" width="48" height="32">
-   <properties>
-    <property name="text" value="Oh!##You found the...##...guest room.##It's kinda funny we\neven have this room.##This outpost hasn't seen\nanother soul in a\nlong time.##But that's no matter\nto us!##We always get the\njob done right!"/>
-   </properties>
-  </object>
+ <objectgroup name="things" width="20" height="15"/>
+ <objectgroup color="#d2ab30" name="dialog" width="20" height="15"/>
+ <objectgroup color="#fa6170" name="crash" width="20" height="15">
+  <object type="crash" x="-16" y="176" width="16" height="32"/>
  </objectgroup>
 </map>
