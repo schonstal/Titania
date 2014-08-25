@@ -9,6 +9,7 @@ import flixel.util.FlxTimer;
 class BadingState extends FlxState
 {
   var badingSprite:FlxSprite;
+  var effectSprite:EffectSprite;
 
   override public function create():Void {
     super.create();
@@ -31,6 +32,9 @@ class BadingState extends FlxState
       });
     });
     FlxG.mouse.visible = false;
+
+    effectSprite = new EffectSprite();
+    add(effectSprite);
   }
   
   override public function update():Void {

@@ -11,6 +11,7 @@ class EffectSprite extends FlxSprite
 {
   var paletteSprite:FlxSprite;
   var bgPaletteSprite:FlxSprite;
+  var pelletPaletteSprite:FlxSprite;
 
   var redArray:Array<Int>;
   var greenArray:Array<Int>;
@@ -29,12 +30,20 @@ class EffectSprite extends FlxSprite
     makeGraphic(FlxG.width, FlxG.height, FlxColor.TRANSPARENT);
     paletteSprite = new FlxSprite();
     paletteSprite.loadGraphic("assets/images/palette.png");
+
     bgPaletteSprite = new FlxSprite();
     bgPaletteSprite.loadGraphic("assets/images/backgroundPalette.png");
+
+    pelletPaletteSprite = new FlxSprite();
+    pelletPaletteSprite.loadGraphic("assets/images/pelletPalette.png");
 
     rotatingPalette = new Array<Int>();
     for (i in 0...cast(bgPaletteSprite.width, Int)) {
       rotatingPalette[i] = bgPaletteSprite.pixels.getPixel(i,Reg.palette);
+    }
+    pillPalette = new Array<Int>();
+    for (i in 0...cast(pelletPaletteSprite.width, Int)) {
+      pillPalette[i] = pelletPaletteSprite.pixels.getPixel(i,Reg.palette);
     }
 
     redArray = new Array<Int>();
@@ -48,11 +57,15 @@ class EffectSprite extends FlxSprite
       for (i in 0...cast(bgPaletteSprite.width, Int)) {
         rotatingPalette[i] = bgPaletteSprite.pixels.getPixel(i,Reg.palette);
       }
+      for (i in 0...cast(pelletPaletteSprite.width, Int)) {
+        pillPalette[i] = pelletPaletteSprite.pixels.getPixel(i,Reg.palette);
+      }
       previousPalette = Reg.palette;
     }
     paletteTimer += FlxG.elapsed;
     if (paletteTimer >= paletteRate) {
       rotatingPalette.unshift(rotatingPalette.pop());
+      pillPalette.unshift(pillPalette.pop());
       paletteTimer = 0;
     }
     super.update();
@@ -82,6 +95,15 @@ class EffectSprite extends FlxSprite
     for(x in 0...cast(bgPaletteSprite.width,Int)) {
       var pixel:Int = bgPaletteSprite.pixels.getPixel(x,0);
       var palettePixel:Int = rotatingPalette[x]; 
+
+      redArray[(pixel & 0xff0000) >> 16] = palettePixel & 0xff0000;
+      greenArray[(pixel & 0xff00) >> 8] = palettePixel & 0xff00;
+      blueArray[pixel & 0xff] = palettePixel & 0xff;
+    }
+
+    for(x in 0...cast(pelletPaletteSprite.width,Int)) {
+      var pixel:Int = pelletPaletteSprite.pixels.getPixel(x,0);
+      var palettePixel:Int = pillPalette[x]; 
 
       redArray[(pixel & 0xff0000) >> 16] = palettePixel & 0xff0000;
       greenArray[(pixel & 0xff00) >> 8] = palettePixel & 0xff00;
