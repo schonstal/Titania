@@ -13,34 +13,43 @@
  <tileset firstgid="307" name="terminal" tilewidth="16" tileheight="22">
   <image source="../../../images/terminal.png" width="16" height="22"/>
  </tileset>
- <tileset firstgid="308" name="bed" tilewidth="72" tileheight="48">
-  <image source="../../../images/bed.png" width="72" height="96"/>
- </tileset>
  <layer name="walls" width="20" height="15">
   <properties>
    <property name="tileset" value="walls"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJyTZGBgkBzFo3iEYEYg1gViJiBOw0EzI6lnQlIPo5GxHgNhII5kHjWABJXNQ3afFhTbodEgzIqDjY61GWgXfwBzMxpj
+   eJyTZGBgkKQhZgRiJiBOw0HrAjEzCeboMRAG4njMgdlJjDkwoAPVh+xumJupBSSobB4sDLSgmI1E/SxIekFYmwE1HKVINA8UhvjiWZSAO7C5H1884zIP5A5c8Q+Sg8UvDMPM08TjDlIAse4k1zyYO1kZUOMPG2bFopaWZQE1MAAcohK3
   </data>
  </layer>
- <objectgroup color="#00a400" name="exits" width="20" height="15">
-  <object type="exit" x="0" y="176" width="16" height="32">
-   <properties>
-    <property name="room" value="hub"/>
-   </properties>
-  </object>
-  <object type="door" gid="301" x="0" y="208">
-   <properties>
-    <property name="id" value="1"/>
-   </properties>
-  </object>
-  <object gid="309" x="168" y="208"/>
- </objectgroup>
  <objectgroup name="things" width="20" height="15">
-  <object type="terminal" gid="307" x="256" y="208">
+  <object type="door" gid="301" x="224" y="96">
    <properties>
-    <property name="id" value="2"/>
+    <property name="id" value="3"/>
+   </properties>
+  </object>
+  <object type="door" gid="301" x="304" y="192">
+   <properties>
+    <property name="id" value="4"/>
+   </properties>
+  </object>
+  <object type="terminal" gid="307" x="256" y="96">
+   <properties>
+    <property name="id" value="4"/>
+   </properties>
+  </object>
+  <object type="terminal" gid="307" x="256" y="192">
+   <properties>
+    <property name="id" value="3"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff6164" name="crash" width="20" height="15">
+  <object type="crash" x="312" y="160" width="16" height="32"/>
+ </objectgroup>
+ <objectgroup color="#00a400" name="exits" width="20" height="15">
+  <object type="exit" x="0" y="64" width="16" height="32">
+   <properties>
+    <property name="room" value="jump"/>
    </properties>
   </object>
  </objectgroup>
