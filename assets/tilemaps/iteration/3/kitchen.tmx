@@ -30,7 +30,5 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="things" width="20" height="15">
-  <object type="pellet" gid="302" x="248" y="95"/>
- </objectgroup>
+ <objectgroup name="things" width="20" height="15"/>
 </map>
