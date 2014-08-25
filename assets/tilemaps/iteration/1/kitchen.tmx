@@ -7,6 +7,9 @@
  <tileset firstgid="1" name="walls" tilewidth="16" tileheight="16">
   <image source="../images/tiles/walls.png" width="320" height="240"/>
  </tileset>
+ <tileset firstgid="301" name="pellet" tilewidth="16" tileheight="16">
+  <image source="../../../images/pellet.png" width="48" height="16"/>
+ </tileset>
  <layer name="walls" width="20" height="15">
   <properties>
    <property name="tileset" value="walls"/>
@@ -26,5 +29,8 @@
     <property name="room" value="secret1"/>
    </properties>
   </object>
+ </objectgroup>
+ <objectgroup name="things" width="20" height="15">
+  <object type="pellet" gid="302" x="248" y="95"/>
  </objectgroup>
 </map>
