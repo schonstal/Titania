@@ -14,7 +14,8 @@ class Reg
     "quartersMirror",
     "hub",
     "kitchen",
-    "jump"
+    "jump",
+    "terminals"
   ];
   public static var level:Int = 1;
   public static var saves:Array<FlxSave> = [];
