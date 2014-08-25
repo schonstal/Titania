@@ -42,11 +42,6 @@
     <property name="room" value="jump"/>
    </properties>
   </object>
-  <object type="terminal" gid="307" x="144" y="176">
-   <properties>
-    <property name="id" value="1"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup color="#ffd010" name="dialog" width="20" height="15">
   <object type="dialog" x="64" y="176" width="48" height="32">
