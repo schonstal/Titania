@@ -27,8 +27,10 @@ class DoorTrigger extends FlxSprite
   }
 
   public function openDoor():Void {
-    triggered = true;
-    door.open();
+    if(!triggered) {
+      triggered = true;
+      door.open();
+    }
   }
 
   override public function update():Void {

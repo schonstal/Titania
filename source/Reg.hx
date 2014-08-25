@@ -13,7 +13,8 @@ class Reg
     "quarters",
     "quartersMirror",
     "hub",
-    "kitchen"
+    "kitchen",
+    "jump"
   ];
   public static var level:Int = 1;
   public static var saves:Array<FlxSave> = [];
@@ -22,4 +23,5 @@ class Reg
   public static var palette:Int = 0;
 
   public static var openDoors:Array<Null<Bool>> = [];
+  public static var currentDoor:Int = 0;
 }
