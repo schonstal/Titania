@@ -37,6 +37,8 @@ class MenuState extends FlxState
     effectSprite = new EffectSprite();
     effectSprite.paletteRate = 0.2;
     add(effectSprite);
+
+    Reg.palette = 1;
   }
   
   override public function destroy():Void {
