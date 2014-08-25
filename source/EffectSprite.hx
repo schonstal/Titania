@@ -17,6 +17,7 @@ class EffectSprite extends FlxSprite
   var blueArray:Array<Int>;
 
   var rotatingPalette:Array<Int>;
+  var pillPalette:Array<Int>;
 
   var previousPalette:Int = 0;
 

@@ -39,6 +39,7 @@ class MenuState extends FlxState
     add(effectSprite);
 
     Reg.palette = 1;
+    FlxG.sound.play("assets/music/title.mp3", 0.75, true);
   }
   
   override public function destroy():Void {
