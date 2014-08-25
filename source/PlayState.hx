@@ -128,13 +128,17 @@ class PlayState extends FlxState
 
   private function touchCrashers():Void {
     if(FlxG.overlap(activeRoom.crashers, player)) {
-      if(!FlxG.sound.muted) glitchSprite.glitchOut();
+      if(!FlxG.sound.muted) {
+        glitchSprite.glitchOut();
+        glitchEffectSprite.visible = false;
+      }
     }
   }
 
   public function switchRoom(roomName:String):Void {
     if (roomName == "quartersMirror" && Reg.level == 3) {
       glitchEffectSprite.visible = true;
+      FlxG.sound.play("assets/sounds/static.wav", 1, true);
     } else {
       glitchEffectSprite.visible = false;
     }
