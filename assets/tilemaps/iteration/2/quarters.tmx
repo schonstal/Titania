@@ -14,7 +14,7 @@
   <image source="../../../images/terminal.png" width="16" height="22"/>
  </tileset>
  <tileset firstgid="308" name="bed" tilewidth="72" tileheight="48">
-  <image source="../../../images/bed.png" width="72" height="96"/>
+  <image source="../../../images/bed.png" width="72" height="48"/>
  </tileset>
  <layer name="walls" width="20" height="15">
   <properties>
