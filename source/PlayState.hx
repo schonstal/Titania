@@ -56,10 +56,11 @@ class PlayState extends FlxState
       Reg.palette = 1;
     }
     if (FlxG.keys.justPressed.SPACE) {
-      //FlxG.sound.muted = true;
-      //glitchSprite.glitchOut();
-      speechGroup.say("butts\nnuts##wub wub wub!");
+      glitchSprite.glitchOut();
+      //speechGroup.say("butts\nnuts##wub wub wub!");
     }
+    touchCrashers();
+
     super.update();
     
     player.resetFlags();
@@ -99,6 +100,12 @@ class PlayState extends FlxState
     });
   }
 
+  private function touchCrashers():Void {
+    if(FlxG.overlap(activeRoom.crashers, player)) {
+      if(!FlxG.sound.muted) glitchSprite.glitchOut();
+    }
+  }
+
   public function switchRoom(roomName:String):Void {
     if (activeRoom != null) {
       remove(activeRoom.foregroundTiles);
@@ -110,6 +117,7 @@ class PlayState extends FlxState
       remove(activeRoom.terminalSymbols);
       remove(activeRoom.doorSymbols);
       remove(activeRoom.doorTriggers);
+      remove(activeRoom.crashers);
     }
     remove(player);
 
@@ -125,6 +133,7 @@ class PlayState extends FlxState
     add(activeRoom.doors);
     add(activeRoom.doorSymbols);
     add(activeRoom.doorTriggers);
+    add(activeRoom.crashers);
 
     Reg.palette = Std.parseInt(activeRoom.properties.palette);
   }

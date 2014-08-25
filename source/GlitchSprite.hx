@@ -25,9 +25,10 @@ class GlitchSprite extends FlxGroup
   }
 
   public function glitchOut():Void {
+    FlxG.sound.muted = true;
 
     horizontalGlitch = new FlxGlitchSprite(sprite);
-    horizontalGlitch.size = 30;
+    horizontalGlitch.size = 3;
     horizontalGlitch.strength = 10;
     horizontalGlitch.delay = 0;
 
@@ -41,9 +42,9 @@ class GlitchSprite extends FlxGroup
 
     add(verticalGlitch);
 
-    new FlxTimer().start(1, function(t):Void {
-      Reg.level++;
-      FlxG.switchState(new BadingState());
+    new FlxTimer().start(2, function(t):Void {
+      //Reg.level++;
+      FlxG.switchState(new RestartState());
     });
   }
 
