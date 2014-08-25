@@ -22,6 +22,7 @@ class SpeechGroup extends FlxGroup
   var talking:Bool = false;
   var messageIndex:Int = 0;
   var currentMessage:String = "";
+  var talkingSound:FlxSound;
 
   var textColor:Int = 0xfff5d966;
 
@@ -39,6 +40,8 @@ class SpeechGroup extends FlxGroup
     speechText.setFormat("assets/fonts/04b03.ttf");
     speechText.color = 0xfff5d966;
     add(speechText);
+    
+    talkingSound = FlxG.sound.load("assets/sounds/talking.wav", 0.6);
   }
 
   public function say(text:String):Void {
@@ -98,6 +101,7 @@ class SpeechGroup extends FlxGroup
       });
       return;
     }
+    talkingSound.play(true);
     speechText.text += currentMessage.charAt(messageIndex);
     messageIndex++;
     new FlxTimer().start(0.05, function(t):Void {

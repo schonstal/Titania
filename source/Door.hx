@@ -37,6 +37,7 @@ class Door extends FlxSprite
       closed = false;
       new FlxTimer().start(0.5, function(t):Void {
         animation.play("open");
+        FlxG.sound.play("assets/sounds/door.wav");
         new FlxTimer().start(0.2, function(t):Void {
           solid = false;
         });

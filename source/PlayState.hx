@@ -44,7 +44,7 @@ class PlayState extends FlxState
     add(glitchSprite);
 
     FlxG.debugger.drawDebug = true;
-    //FlxG.sound.play("assets/music/level1.mp3", 1, true);
+    FlxG.sound.play("assets/music/level1.mp3", 1, true);
   }
   
   override public function destroy():Void {
@@ -104,6 +104,7 @@ class PlayState extends FlxState
       remove(activeRoom.foregroundTiles);
       remove(activeRoom.exits);
       remove(activeRoom.background);
+      remove(activeRoom.images);
       remove(activeRoom.doors);
       remove(activeRoom.terminals);
       remove(activeRoom.terminalSymbols);
@@ -115,6 +116,7 @@ class PlayState extends FlxState
     activeRoom = Reflect.field(rooms, roomName);
     activeRoom.loadObjects(this);
     add(activeRoom.background);
+    add(activeRoom.images);
     add(activeRoom.terminals);
     add(activeRoom.terminalSymbols);
     add(player);

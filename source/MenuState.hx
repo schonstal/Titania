@@ -20,7 +20,7 @@ class MenuState extends FlxState
     add(menuGraphic);
 
     startGameButton = new FlxButton(89,130, function():Void{
-      FlxG.switchState(new PlayState());
+      FlxG.switchState(new AlarmState());
     });
     startGameButton.loadGraphic("assets/images/startGame.png", true, 136, 10);
     startGameButton.width = 150;

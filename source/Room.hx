@@ -38,6 +38,7 @@ class Room extends TiledMap
   public var doorSymbols:FlxGroup;
   public var doorTriggers:FlxGroup;
   public var terminalSymbols:FlxGroup;
+  public var images:FlxGroup;
   public var background:FlxSprite;
 
   private var collidableTileLayers:Array<FlxTilemap>;
@@ -54,6 +55,7 @@ class Room extends TiledMap
     doorTriggers = new FlxGroup();
     terminalSymbols = new FlxGroup();
     terminals = new FlxGroup();
+    images = new FlxGroup();
     
     // Load Tile Maps
     for (tileLayer in layers) {
@@ -142,6 +144,9 @@ class Room extends TiledMap
         var doorSymbol = new DoorSymbol(x, y, Std.parseInt(o.custom.get("id")));
         terminals.add(terminal);
         terminalSymbols.add(doorSymbol);
+      case "image":
+        var image:FlxSprite = new FlxSprite(x, y, "assets/images/" + o.custom.get("file") + ".png");
+        images.add(image);
     }
   }
   

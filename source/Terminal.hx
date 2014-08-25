@@ -14,12 +14,23 @@ import flixel.util.FlxTimer;
 class Terminal extends FlxSprite
 {
   public var id:Int;
+  var wasOn:Bool;
 
   public function new(X:Float, Y:Float, id:Int) {
     super(X,Y);
     this.id = id;
 
+    wasOn = Reg.openDoors[id];
+
     loadGraphic("assets/images/terminal.png", true, 16, 22);
+  }
+
+  override public function update():Void {
+    super.update();
+    if(!wasOn && Reg.openDoors[id]) {
+      wasOn = true;
+      FlxG.sound.play("assets/sounds/terminal.wav", 0.6);
+    }
   }
 }
 
