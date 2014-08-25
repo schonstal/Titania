@@ -112,7 +112,7 @@ class PlayState extends FlxState
 
   private function touchCrashers():Void {
     if(FlxG.overlap(activeRoom.crashers, player)) {
-      //if(!FlxG.sound.muted) glitchSprite.glitchOut();
+      if(!FlxG.sound.muted) glitchSprite.glitchOut();
     }
   }
 

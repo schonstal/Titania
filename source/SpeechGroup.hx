@@ -47,20 +47,22 @@ class SpeechGroup extends FlxGroup
   public function say(text:String):Void {
     if(!talking) {
       displayMessages();
-      talking = true;
     }
     var sentences:Array<String> = text.split("##");
     for (s in sentences) {
-      messageQueue.unshift(s);
+      messageQueue.unshift(s.split("\\n").join("\n"));
     }
   }
 
   override public function update():Void {
-    if(!talking && messageQueue.length > 0) displayMessages();
+    if(!talking && messageQueue.length > 0) {
+      displayMessages();
+    }
     super.update();
   }
 
   private function displayMessages():Void {
+    talking = true;
     FlxTween.tween(speechBubble, { alpha: 1, y: 18 }, 0.25, {
       ease: FlxEase.quadOut,
       onComplete: function(t:FlxTween):Void {
@@ -73,8 +75,11 @@ class SpeechGroup extends FlxGroup
     speechText.text = "";
     currentMessage = "";
     messageIndex = 0;
-    talking = false;
-    FlxTween.tween(speechBubble, { alpha: 0, y: 12 }, 0.25);
+    FlxTween.tween(speechBubble, { alpha: 0, y: 12 }, 0.25, {
+      onComplete: function(t):Void {
+        talking = false;
+      }
+    });
   }
 
   private function readMessages():Void {

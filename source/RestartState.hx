@@ -39,6 +39,7 @@ Failed to sync... restarting.");
       panicText.visible = false;
 
       new FlxTimer().start(0.5, function(t):Void {
+        Reg.level++;
         FlxG.switchState(new BadingState());
       });
     });
