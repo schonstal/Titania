@@ -40,6 +40,7 @@ class Room extends TiledMap
   public var terminalSymbols:FlxGroup;
   public var images:FlxGroup;
   public var crashers:FlxGroup;
+  public var dialogs:FlxGroup;
   public var background:FlxSprite;
 
   private var collidableTileLayers:Array<FlxTilemap>;
@@ -58,6 +59,7 @@ class Room extends TiledMap
     terminals = new FlxGroup();
     images = new FlxGroup();
     crashers = new FlxGroup();
+    dialogs = new FlxGroup();
     
     // Load Tile Maps
     for (tileLayer in layers) {
@@ -152,6 +154,9 @@ class Room extends TiledMap
       case "crash":
         var crasher:Crasher = new Crasher(x, y, o.width, o.height);
         crashers.add(crasher);
+      case "dialog":
+        var dialog:Dialog = new Dialog(x, y, o.width, o.height, o.custom.get("text"));
+        dialogs.add(dialog);
     }
   }
   

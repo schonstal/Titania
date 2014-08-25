@@ -68,6 +68,7 @@ class PlayState extends FlxState
     checkExits();
     touchWalls();
     touchDoors();
+    checkDialogs();
   }
 
   private function touchWalls():Void {
@@ -100,9 +101,18 @@ class PlayState extends FlxState
     });
   }
 
+  private function checkDialogs():Void {
+    FlxG.overlap(activeRoom.dialogs, player, function(dialog:Dialog, player:Player):Void {
+      if (!dialog.triggered) {
+        dialog.triggered = true;
+        speechGroup.say(dialog.text);
+      }
+    });
+  }
+
   private function touchCrashers():Void {
     if(FlxG.overlap(activeRoom.crashers, player)) {
-      if(!FlxG.sound.muted) glitchSprite.glitchOut();
+      //if(!FlxG.sound.muted) glitchSprite.glitchOut();
     }
   }
 
@@ -118,6 +128,7 @@ class PlayState extends FlxState
       remove(activeRoom.doorSymbols);
       remove(activeRoom.doorTriggers);
       remove(activeRoom.crashers);
+      remove(activeRoom.dialogs);
     }
     remove(player);
 
@@ -134,6 +145,7 @@ class PlayState extends FlxState
     add(activeRoom.doorSymbols);
     add(activeRoom.doorTriggers);
     add(activeRoom.crashers);
+    add(activeRoom.dialogs);
 
     Reg.palette = Std.parseInt(activeRoom.properties.palette);
   }
