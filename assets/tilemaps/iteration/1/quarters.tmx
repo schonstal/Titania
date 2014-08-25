@@ -21,7 +21,7 @@
    <property name="tileset" value="walls"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJyTZGBgkBzFo3iYYUYgZgLiNBw0CDOTYJ4UA2GgAzVXF8kOXTQaZp4oEeYRA7CZZ8JIuXmaQKwFxaxIbHzYDo3WYqA8HtExALcKGrc=
+   eJyTZGBgkBzFo3iYYUYgZgLiNBw0CDOTYJ4UA2GgAzVXF8kOXTQaZp4oEeYRA2hlniYQa0ExKxIbH7ZDo7UYKI9HdAwAiX8agg==
   </data>
  </layer>
  <objectgroup color="#00a400" name="things" width="20" height="15">
@@ -38,6 +38,11 @@
   <object type="terminal" gid="307" x="48" y="208">
    <properties>
     <property name="id" value="0"/>
+   </properties>
+  </object>
+  <object type="image" gid="308" x="80" y="208">
+   <properties>
+    <property name="file" value="bed"/>
    </properties>
   </object>
  </objectgroup>
