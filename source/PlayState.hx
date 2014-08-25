@@ -12,6 +12,7 @@ import flixel.system.FlxSound;
 class PlayState extends FlxState
 {
   var rooms:Dynamic = {};
+  var glitchEffectSprite:GlitchEffectSprite;
   var glitchSprite:GlitchSprite;
   var player:Player;
   var activeRoom:Room;
@@ -32,6 +33,8 @@ class PlayState extends FlxState
     player.init();
     add(player);
 
+    glitchEffectSprite = new GlitchEffectSprite();
+
     switchRoom("quarters");
 
     //Palette Swap
@@ -42,6 +45,8 @@ class PlayState extends FlxState
     //Glitch out
     glitchSprite = new GlitchSprite();
     add(glitchSprite);
+
+    add(glitchEffectSprite);
 
     FlxG.debugger.drawDebug = true;
     if (Reg.level < 3) {
@@ -122,6 +127,11 @@ class PlayState extends FlxState
   }
 
   public function switchRoom(roomName:String):Void {
+    if (roomName == "quartersMirror" && Reg.level == 3) {
+      glitchEffectSprite.visible = true;
+    } else {
+      glitchEffectSprite.visible = false;
+    }
     if (activeRoom != null) {
       remove(activeRoom.foregroundTiles);
       remove(activeRoom.exits);
