@@ -18,31 +18,38 @@
    <property name="tileset" value="walls"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJyTZGBgkKQDZgRiJijWhdJpeGhmPOaA9OsxkAbEcbiHVHNgQAfNP+SaMxgACxBrATEbHnlWqBpigAQDJIxFccgjxwUut9hBaRDWhqrVxOFGZPOQ9bIi6cWFNZHsgfmRkJ5RPHAYAM+NFQc=
+   eJyTZGBgkKQhZgRiJiBOw0HrAjEzCeboMRAG4njMgdlJjDkwoAPVh+xumJupBSSobB4sDLSgmI1E/SxIekFYmwE1HKVINA8UhvjiWZSAO7C5H1884zIP5A5c8Q+Sg8UvDMPM08TjDlIAse4k1zyYO1kZUOMPG2bFopaWZQE1MAAcohK3
   </data>
  </layer>
  <objectgroup name="things" width="20" height="15">
-  <object type="terminal" gid="307" x="160" y="96">
+  <object type="door" gid="301" x="224" y="96">
    <properties>
-    <property name="id" value="2"/>
+    <property name="id" value="3"/>
    </properties>
   </object>
-  <object type="door" gid="301" x="304" y="96">
+  <object type="door" gid="301" x="304" y="192">
    <properties>
-    <property name="id" value="2"/>
+    <property name="id" value="4"/>
+   </properties>
+  </object>
+  <object type="terminal" gid="307" x="256" y="96">
+   <properties>
+    <property name="id" value="4"/>
+   </properties>
+  </object>
+  <object type="terminal" gid="307" x="256" y="192">
+   <properties>
+    <property name="id" value="3"/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup color="#ff6164" name="crash" width="20" height="15"/>
+ <objectgroup color="#ff6164" name="crash" width="20" height="15">
+  <object type="crash" x="312" y="160" width="16" height="32"/>
+ </objectgroup>
  <objectgroup color="#00a400" name="exits" width="20" height="15">
-  <object type="exit" x="0" y="80" width="16" height="64">
+  <object type="exit" x="0" y="64" width="16" height="32">
    <properties>
-    <property name="room" value="hub"/>
-   </properties>
-  </object>
-  <object type="exit" x="304" y="64" width="16" height="32">
-   <properties>
-    <property name="room" value="terminals"/>
+    <property name="room" value="jump"/>
    </properties>
   </object>
  </objectgroup>
