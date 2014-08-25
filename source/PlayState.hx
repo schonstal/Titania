@@ -49,7 +49,7 @@ class PlayState extends FlxState
     add(glitchEffectSprite);
 
     FlxG.debugger.drawDebug = true;
-    if (Reg.level < 3) {
+    if (Reg.level < 3 || Reg.level == 4) {
       FlxG.sound.play("assets/music/level1.mp3", 1, true);
     } else {
       FlxG.sound.play("assets/sounds/spacestation.mp3", 1, true);
