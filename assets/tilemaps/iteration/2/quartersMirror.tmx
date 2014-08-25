@@ -14,7 +14,10 @@
   <image source="../../../images/terminal.png" width="16" height="22"/>
  </tileset>
  <tileset firstgid="308" name="bed" tilewidth="72" tileheight="48">
-  <image source="../../../images/bed.png" width="72" height="96"/>
+  <image source="../../../images/bed.png" width="72" height="48"/>
+ </tileset>
+ <tileset firstgid="310" name="bed2" tilewidth="71" tileheight="48">
+  <image source="../../../images/bed2.png" width="71" height="48"/>
  </tileset>
  <layer name="walls" width="20" height="15">
   <properties>
@@ -35,12 +38,16 @@
     <property name="id" value="1"/>
    </properties>
   </object>
-  <object gid="309" x="168" y="208"/>
  </objectgroup>
  <objectgroup name="things" width="20" height="15">
   <object type="terminal" gid="307" x="256" y="208">
    <properties>
     <property name="id" value="2"/>
+   </properties>
+  </object>
+  <object type="image" gid="310" x="168" y="208">
+   <properties>
+    <property name="file" value="bed2"/>
    </properties>
   </object>
  </objectgroup>
