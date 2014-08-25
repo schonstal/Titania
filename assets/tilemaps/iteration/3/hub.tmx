@@ -50,5 +50,10 @@
     <property name="id" value="0"/>
    </properties>
   </object>
+  <object type="door" gid="301" x="304" y="208">
+   <properties>
+    <property name="id" value="1"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
