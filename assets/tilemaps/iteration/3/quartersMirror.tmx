@@ -37,6 +37,6 @@
  <objectgroup name="things" width="20" height="15"/>
  <objectgroup color="#d2ab30" name="dialog" width="20" height="15"/>
  <objectgroup color="#fa6170" name="crash" width="20" height="15">
-  <object type="crash" x="-16" y="176" width="16" height="32"/>
+  <object type="crash" x="208" y="160" width="64" height="48"/>
  </objectgroup>
 </map>
