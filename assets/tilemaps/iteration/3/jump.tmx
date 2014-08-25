@@ -22,11 +22,6 @@
   </data>
  </layer>
  <objectgroup name="things" width="20" height="15">
-  <object type="terminal" gid="307" x="160" y="96">
-   <properties>
-    <property name="id" value="1"/>
-   </properties>
-  </object>
   <object type="door" gid="301" x="304" y="96">
    <properties>
     <property name="id" value="2"/>

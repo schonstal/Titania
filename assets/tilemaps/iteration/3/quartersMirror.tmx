@@ -27,13 +27,7 @@
    eJy1U8ENwyAQo0iwQVSxQq/JMszQdv8NGiQjWRbheLRIli/gOx8QcgihEBLYZH6EpqmIo5OToSkL+kSaInGi9Sp5ceKvtXtPnkZrx4V87W3ljNRT95JFNzqjUW6P9axm4L16/4FdaLSvWb/cW6a6V36el3ryPd3gZ8h7g5/gDej5keYj4XXiALyxk/8vxv1P9dq+Hic+4IYdvIErrfW5A2zE+jb6HXv3x+/A5LvV+AKw9hos
   </data>
  </layer>
- <objectgroup color="#00a400" name="exits" width="20" height="15">
-  <object type="door" gid="301" x="0" y="208">
-   <properties>
-    <property name="id" value="1"/>
-   </properties>
-  </object>
- </objectgroup>
+ <objectgroup color="#00a400" name="exits" width="20" height="15"/>
  <objectgroup name="things" width="20" height="15"/>
  <objectgroup color="#d2ab30" name="dialog" width="20" height="15"/>
  <objectgroup color="#fa6170" name="crash" width="20" height="15">
