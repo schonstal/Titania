@@ -46,11 +46,5 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup color="#f1ea15" name="dialog" width="20" height="15">
-  <object type="dialog" x="176" y="176" width="48" height="32">
-   <properties>
-    <property name="text" value="Good morning!"/>
-   </properties>
-  </object>
- </objectgroup>
+ <objectgroup color="#f1ea15" name="dialog" width="20" height="15"/>
 </map>
