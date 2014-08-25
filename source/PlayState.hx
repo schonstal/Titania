@@ -44,7 +44,11 @@ class PlayState extends FlxState
     add(glitchSprite);
 
     FlxG.debugger.drawDebug = true;
-    FlxG.sound.play("assets/music/level1.mp3", 1, true);
+    if (Reg.level < 3) {
+      FlxG.sound.play("assets/music/level1.mp3", 1, true);
+    } else {
+      FlxG.sound.play("assets/sounds/spacestation.mp3", 1, true);
+    }
   }
   
   override public function destroy():Void {
@@ -105,6 +109,7 @@ class PlayState extends FlxState
     FlxG.overlap(activeRoom.dialogs, player, function(dialog:Dialog, player:Player):Void {
       if (!dialog.triggered) {
         dialog.triggered = true;
+        if(Reg.level < 3)
         speechGroup.say(dialog.text);
       }
     });

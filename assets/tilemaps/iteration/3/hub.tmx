@@ -13,48 +13,52 @@
  <tileset firstgid="307" name="terminal" tilewidth="16" tileheight="22">
   <image source="../../../images/terminal.png" width="16" height="22"/>
  </tileset>
- <tileset firstgid="308" name="bed" tilewidth="72" tileheight="48">
-  <image source="../../../images/bed.png" width="72" height="48"/>
- </tileset>
- <tileset firstgid="309" name="bed2" tilewidth="71" tileheight="48">
-  <image source="../../../images/bed2.png" width="71" height="48"/>
- </tileset>
  <layer name="walls" width="20" height="15">
   <properties>
    <property name="tileset" value="walls"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJyTZGBgkBzFo3iEYEYg1gViJiBOw0EzI6lnQlIPo5GxHgNhII5kHjWABJXNQ3afFhTbodEgzIqDjY61GWgXfwBzMxpj
+   eJyTZGBgkETDUgwIII5FnlQsimSeBAXmMAIxExDrIZmnAxXThdJpaDQzke4iFmALD0ao/Xp49OECOkhu12XADH9KAXp4DXegBcR2UJqNDP0saGYwIWFy4xfZDEJ2s0Lt1YKyyfEDDGBLq4TSvBYStkOjtbGYp4lDLQxTWnagYwB9MQ9s
   </data>
  </layer>
- <objectgroup color="#00a400" name="exits" width="20" height="15">
+ <objectgroup color="#00a42e" name="exits" width="20" height="15">
   <object type="exit" x="0" y="176" width="16" height="32">
    <properties>
-    <property name="room" value="hub"/>
+    <property name="room" value="quarters"/>
    </properties>
   </object>
-  <object type="door" gid="301" x="0" y="208">
+  <object type="exit" x="304" y="176" width="16" height="32">
    <properties>
-    <property name="id" value="1"/>
+    <property name="room" value="quartersMirror"/>
+   </properties>
+  </object>
+  <object type="exit" x="0" y="112" width="16" height="32">
+   <properties>
+    <property name="room" value="kitchen"/>
+   </properties>
+  </object>
+  <object type="exit" x="304" y="80" width="16" height="64">
+   <properties>
+    <property name="room" value="jump"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ffd010" name="dialog" width="20" height="15">
+  <object type="dialog" x="64" y="176" width="48" height="32">
+   <properties>
+    <property name="text" value="I've collected some new samples for analysis.##You'll find them in\nLab 5A."/>
    </properties>
   </object>
  </objectgroup>
  <objectgroup name="things" width="20" height="15">
-  <object type="terminal" gid="307" x="256" y="208">
+  <object type="door" gid="301" x="0" y="208">
    <properties>
-    <property name="id" value="2"/>
+    <property name="id" value="0"/>
    </properties>
   </object>
-  <object type="image" gid="309" x="168" y="208">
+  <object type="door" gid="301" x="304" y="208">
    <properties>
-    <property name="file" value="bed2"/>
-   </properties>
-  </object>
- </objectgroup>
- <objectgroup color="#d2ab30" name="dialog" width="20" height="15">
-  <object type="dialog" x="32" y="176" width="48" height="32">
-   <properties>
-    <property name="text" value="Oh!##You found the...##...guest room.##It's kinda funny we\neven have this room.##This outpost hasn't seen\nanother soul in a\nlong time.##But that's no matter\nto us!##We always get the\njob done right!"/>
+    <property name="id" value="1"/>
    </properties>
   </object>
  </objectgroup>

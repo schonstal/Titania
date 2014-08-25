@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="20" height="15" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" width="20" height="15" tilewidth="16" tileheight="16" backgroundcolor="#818181">
  <properties>
   <property name="background" value="sin"/>
   <property name="palette" value="1"/>
@@ -16,45 +16,40 @@
  <tileset firstgid="308" name="bed" tilewidth="72" tileheight="48">
   <image source="../../../images/bed.png" width="72" height="48"/>
  </tileset>
- <tileset firstgid="309" name="bed2" tilewidth="71" tileheight="48">
-  <image source="../../../images/bed2.png" width="71" height="48"/>
- </tileset>
  <layer name="walls" width="20" height="15">
   <properties>
    <property name="tileset" value="walls"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJyTZGBgkBzFo3iEYEYg1gViJiBOw0EzI6lnQlIPo5GxHgNhII5kHjWABJXNQ3afFhTbodEgzIqDjY61GWgXfwBzMxpj
+   eJyTZGBgkBzFo3iYYUYgZgLiNBw0CDOTYJ4UA2GgAzVXF8kOXTQaZp4oEeYRA2hlniYQa0ExKxIbH7ZDo7UYKI9HdAwAiX8agg==
   </data>
  </layer>
- <objectgroup color="#00a400" name="exits" width="20" height="15">
-  <object type="exit" x="0" y="176" width="16" height="32">
+ <objectgroup color="#00a400" name="things" width="20" height="15">
+  <object type="exit" x="304" y="176" width="16" height="32">
    <properties>
     <property name="room" value="hub"/>
    </properties>
   </object>
-  <object type="door" gid="301" x="0" y="208">
+  <object type="door" gid="301" x="304" y="208">
    <properties>
-    <property name="id" value="1"/>
+    <property name="id" value="0"/>
+   </properties>
+  </object>
+  <object type="terminal" gid="307" x="48" y="208">
+   <properties>
+    <property name="id" value="0"/>
+   </properties>
+  </object>
+  <object type="image" gid="308" x="80" y="208">
+   <properties>
+    <property name="file" value="bed"/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="things" width="20" height="15">
-  <object type="terminal" gid="307" x="256" y="208">
+ <objectgroup color="#f1ea15" name="dialog" width="20" height="15">
+  <object type="dialog" x="176" y="176" width="48" height="32">
    <properties>
-    <property name="id" value="2"/>
-   </properties>
-  </object>
-  <object type="image" gid="309" x="168" y="208">
-   <properties>
-    <property name="file" value="bed2"/>
-   </properties>
-  </object>
- </objectgroup>
- <objectgroup color="#d2ab30" name="dialog" width="20" height="15">
-  <object type="dialog" x="32" y="176" width="48" height="32">
-   <properties>
-    <property name="text" value="Oh!##You found the...##...guest room.##It's kinda funny we\neven have this room.##This outpost hasn't seen\nanother soul in a\nlong time.##But that's no matter\nto us!##We always get the\njob done right!"/>
+    <property name="text" value="Good morning!"/>
    </properties>
   </object>
  </objectgroup>

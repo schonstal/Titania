@@ -30,6 +30,8 @@ class MenuState extends FlxState
     add(startGameButton);
     FlxG.debugger.drawDebug = true;
     super.create();
+
+    add(new EffectSprite());
   }
   
   override public function destroy():Void {

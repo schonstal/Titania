@@ -2,6 +2,7 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.FlxObject;
 import flixel.FlxState;
 import flixel.util.FlxTimer;
 
@@ -17,6 +18,8 @@ class BadingState extends FlxState
 
     var badingSprite:FlxSprite = new FlxSprite();
     badingSprite.loadGraphic("assets/images/logo.png");
+    badingSprite.setFacingFlip(FlxObject.DOWN, false, true);
+    if(Reg.level == 3) badingSprite.facing = FlxObject.DOWN;
     add(badingSprite);
 
     FlxG.sound.play("assets/sounds/bading.mp3");
