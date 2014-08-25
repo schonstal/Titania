@@ -48,4 +48,11 @@
    </properties>
   </object>
  </objectgroup>
+ <objectgroup color="#ffd010" name="dialog" width="20" height="15">
+  <object type="dialog" x="64" y="176" width="48" height="32">
+   <properties>
+    <property name="text" value="Good morning!##"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
