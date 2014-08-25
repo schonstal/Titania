@@ -18,7 +18,7 @@
    <property name="tileset" value="walls"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJyTZGBgkKQDZgRiJijWhdJpeGhmPOaA9OsxkAbEcbiHVHNgQAfJP5SYM5CABYi1oJgViNnwqGOFqsMH0MNYlAh16PbYIblHG808TST3wtRooanTQjIDXf8oHvoYAB/rFa0=
+   eJyTZGBgkKQDZgRiJijWhdJpeGhmPOaA9OsxkAbEcbiHVHNgQAfNP+SaMxgACxBrATEbHnlWqBpigAQDJIxFccgjxwUut9hBaRDWhqrVxOFGZPOQ9bIi6cWFNZHsgfmRkJ5RPHAYAM+NFQc=
   </data>
  </layer>
  <objectgroup color="#00a400" name="exits" width="20" height="15">
@@ -29,7 +29,7 @@
   </object>
  </objectgroup>
  <objectgroup name="things" width="20" height="15">
-  <object type="terminal" gid="307" x="144" y="96">
+  <object type="terminal" gid="307" x="160" y="96">
    <properties>
     <property name="id" value="2"/>
    </properties>
