@@ -11,10 +11,24 @@ import flixel.ui.FlxButton;
  */
 class MenuState extends FlxState
 {
+  var menuGraphic:FlxSprite;
+  var startGameButton:FlxButton;
+
   override public function create():Void {
-    var text:FlxText = new FlxText(0, 0, FlxG.width, "test");
-    text.setFormat("assets/fonts/04b03.ttf");
-    add(text);
+    menuGraphic = new FlxSprite();
+    menuGraphic.loadGraphic("assets/images/titleScreen.png");
+    add(menuGraphic);
+
+    startGameButton = new FlxButton(34,200, function():Void{
+      FlxG.switchState(new PlayState());
+    });
+    startGameButton.loadGraphic("assets/images/startGame.png", true, 136, 10);
+    startGameButton.width = 150;
+    startGameButton.offset.x = -7;
+    startGameButton.height = 20;
+    startGameButton.offset.y = -5;
+    add(startGameButton);
+    FlxG.debugger.drawDebug = true;
     super.create();
   }
   
@@ -23,9 +37,6 @@ class MenuState extends FlxState
   }
 
   override public function update():Void {
-    if (FlxG.mouse.justPressed) {
-      FlxG.switchState(new PlayState());
-    }
     super.update();
   }
 }
