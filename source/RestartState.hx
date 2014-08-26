@@ -20,12 +20,12 @@ class RestartState extends FlxState
     var text:String;
 
     if (Reg.level == 4) {
-"FATAL ERROR: Critical fault!
+      text = "FATAL ERROR: Critical fault!
 Program data is corrupt.
 
-01 13 00ff 01   0000
-0bad0 00aa 01   0ddd
-01 10 00aa 0000 0
+|| ||  ||==  ||    ||~~|
+||=||  ||--  ||    ||~~|
+|| ||  ||==  ||==  ||
 
 Failed to sync... restarting.";
     } else if (Reg.level == 5) {
@@ -46,11 +46,11 @@ Failed to sync... restarting.";
 =============##=====
 =============##=====
 ===========####=====";
-    } else if (Reg.level = 6) {
+    } else if (Reg.level == 6) {
       text =
 "HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP" +
 "HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP";
-    } else if (Reg.level = 7) {
+    } else if (Reg.level == 7) {
       text = "I don't want to be deleted...";
     } else {
       text =
@@ -79,7 +79,7 @@ Failed to sync... restarting.";
       panicText.visible = false;
 
       if(Reg.level < 8) {
-        new FlxTimer().start(0.5, function(t):Void {
+        new FlxTimer().start(Reg.level == 7 ? 2 : 0.5, function(t):Void {
           Reg.level++;
           FlxG.switchState(new BadingState());
         });

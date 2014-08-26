@@ -8,6 +8,8 @@ import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.addons.effects.FlxGlitchSprite;
 import flixel.system.FlxSound;
+import flixel.util.FlxColor;
+import flixel.util.FlxTimer;
 
 class PlayState extends FlxState
 {
@@ -17,6 +19,7 @@ class PlayState extends FlxState
   var player:Player;
   var activeRoom:Room;
   var speechGroup:SpeechGroup;
+  var leaving:Bool = false;
 
   var iterationMusic:FlxSound;
 
@@ -49,10 +52,11 @@ class PlayState extends FlxState
     add(glitchEffectSprite);
 
     FlxG.debugger.drawDebug = true;
-    if (Reg.level < 3 || Reg.level == 4) {
-      FlxG.sound.play("assets/music/level1.mp3", 1, true);
-    } else {
+    if (Reg.level == 3) {
       FlxG.sound.play("assets/sounds/spacestation.mp3", 1, true);
+    } else if (Reg.level == 8) {
+    } else {
+      FlxG.sound.play("assets/music/level1.mp3", 1, true);
     }
   }
   
@@ -61,13 +65,6 @@ class PlayState extends FlxState
   }
 
   override public function update():Void {
-    if (FlxG.keys.justPressed.RIGHT) {
-      Reg.palette = 1;
-    }
-    if (FlxG.keys.justPressed.SPACE) {
-      glitchSprite.glitchOut();
-      //speechGroup.say("butts\nnuts##wub wub wub!");
-    }
     touchCrashers();
 
     super.update();
@@ -128,9 +125,18 @@ class PlayState extends FlxState
 
   private function touchCrashers():Void {
     if(FlxG.overlap(activeRoom.crashers, player)) {
-      if(!FlxG.sound.muted) {
-        glitchSprite.glitchOut();
-        glitchEffectSprite.visible = false;
+      if(!FlxG.sound.muted || !leaving) {
+        leaving = true;
+        if(Reg.level == 8) {
+          FlxG.camera.fade(FlxColor.BLACK,1,false,function():Void {
+            new FlxTimer().start(2, function(t):Void {
+              FlxG.switchState(new CreditsState());
+            });
+          });
+        } else {
+          glitchSprite.glitchOut();
+          glitchEffectSprite.visible = false;
+        }
       }
     }
   }

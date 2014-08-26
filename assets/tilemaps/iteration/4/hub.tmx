@@ -46,7 +46,7 @@
  <objectgroup color="#ffd010" name="dialog" width="20" height="15">
   <object type="dialog" x="64" y="176" width="48" height="32">
    <properties>
-    <property name="text" value="I've collected some new samples for analysis.##You'll find them in\nLab 5A."/>
+    <property name="text" value="Sorry if things have\nseemed a bit weird\nlately.##I'm just doing some\nroutine maintainence\non my systems.##I'm almost complete,\nso there shouldn't be\nany more problems!"/>
    </properties>
   </object>
  </objectgroup>

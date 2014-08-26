@@ -57,7 +57,11 @@ class MenuState extends FlxState
     add(glitchSprite);
 
     Reg.palette = 1;
-    FlxG.sound.play("assets/sounds/spacestation.mp3", 0.75, true);
+    if(Reg.level < 8) {
+      FlxG.sound.play("assets/sounds/spacestation.mp3", 0.75, true);
+    } else {
+      FlxG.sound.playMusic("assets/music/title.mp3", 1, true);
+    }
   }
   
   override public function destroy():Void {

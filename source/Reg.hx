@@ -17,7 +17,7 @@ class Reg
     "jump",
     "terminals"
   ];
-  public static var level:Int = 4;
+  public static var level:Int = 8;
   public static var saves:Array<FlxSave> = [];
 
   // Which color palette to use
