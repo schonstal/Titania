@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="15" tilewidth="16" tileheight="16" backgroundcolor="#818181">
+ <properties>
+  <property name="background" value="sin"/>
+  <property name="palette" value="1"/>
+ </properties>
+ <tileset firstgid="1" name="walls" tilewidth="16" tileheight="16">
+  <image source="../images/tiles/walls.png" width="320" height="240"/>
+ </tileset>
+ <tileset firstgid="301" name="door" tilewidth="16" tileheight="48">
+  <image source="../../../images/door.png" width="96" height="48"/>
+ </tileset>
+ <tileset firstgid="307" name="terminal" tilewidth="16" tileheight="22">
+  <image source="../../../images/terminal.png" width="16" height="22"/>
+ </tileset>
+ <tileset firstgid="308" name="bed" tilewidth="72" tileheight="48">
+  <image source="../../../images/bed.png" width="72" height="96"/>
+ </tileset>
+ <layer name="walls" width="20" height="15">
+  <properties>
+   <property name="tileset" value="walls"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJyTZGBgkBzFo3iYYUYgZgLiNBw0CDOTYJ4UA2GgAzVXF8kOXTQaZp4oEeYRA2hlniYQa0ExKxIbH7ZDo7UYKI9HdAwAiX8agg==
+  </data>
+ </layer>
+ <objectgroup color="#00a400" name="things" width="20" height="15">
+  <object type="exit" x="304" y="176" width="16" height="32">
+   <properties>
+    <property name="room" value="hub"/>
+   </properties>
+  </object>
+  <object type="door" gid="301" x="304" y="208">
+   <properties>
+    <property name="id" value="0"/>
+   </properties>
+  </object>
+  <object type="terminal" gid="307" x="48" y="208">
+   <properties>
+    <property name="id" value="0"/>
+   </properties>
+  </object>
+  <object type="image" gid="308" x="80" y="208">
+   <properties>
+    <property name="file" value="bed"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#f1ea15" name="dialog" width="20" height="15">
+  <object type="dialog" x="176" y="176" width="48" height="32">
+   <properties>
+    <property name="text" value="Good morning!"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

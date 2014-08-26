@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="15" tilewidth="16" tileheight="16">
+ <properties>
+  <property name="background" value="sin"/>
+  <property name="palette" value="1"/>
+ </properties>
+ <tileset firstgid="1" name="walls" tilewidth="16" tileheight="16">
+  <image source="../images/tiles/walls.png" width="320" height="240"/>
+ </tileset>
+ <tileset firstgid="301" name="door" tilewidth="16" tileheight="48">
+  <image source="../../../images/door.png" width="96" height="48"/>
+ </tileset>
+ <tileset firstgid="307" name="terminal" tilewidth="16" tileheight="22">
+  <image source="../../../images/terminal.png" width="16" height="22"/>
+ </tileset>
+ <layer name="walls" width="20" height="15">
+  <properties>
+   <property name="tileset" value="walls"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJyTZGBgkETDUgwIII5FnlQsimSeBAXmMAIxExDrIZmnAxXThdJpaDQzke4iFmALD0ao/Xp49OECOkhu12XADH9KAXp4DXegBcR2UJqNDP0saGYwIWFy4xc5HRKymxVqrxaUjcsPsHyED2BLq7jSPMw8LSRsh0ZrYzFPE8mtyHqxqaUGBgDGiQ+J
+  </data>
+ </layer>
+ <objectgroup color="#00a42e" name="exits" width="20" height="15">
+  <object type="exit" x="0" y="176" width="16" height="32">
+   <properties>
+    <property name="room" value="quarters"/>
+   </properties>
+  </object>
+  <object type="exit" x="0" y="112" width="16" height="32">
+   <properties>
+    <property name="room" value="kitchen"/>
+   </properties>
+  </object>
+  <object type="door" gid="301" x="0" y="208">
+   <properties>
+    <property name="id" value="0"/>
+   </properties>
+  </object>
+  <object type="exit" x="304" y="80" width="16" height="64">
+   <properties>
+    <property name="room" value="jump"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ffd010" name="dialog" width="20" height="15">
+  <object type="dialog" x="64" y="176" width="48" height="32">
+   <properties>
+    <property name="text" value="I've collected some new samples for analysis.##You'll find them in\nLab 5A."/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

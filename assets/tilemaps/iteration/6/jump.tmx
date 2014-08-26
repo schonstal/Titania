@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="15" tilewidth="16" tileheight="16">
+ <properties>
+  <property name="background" value="sin"/>
+  <property name="palette" value="1"/>
+ </properties>
+ <tileset firstgid="1" name="walls" tilewidth="16" tileheight="16">
+  <image source="../images/tiles/walls.png" width="320" height="240"/>
+ </tileset>
+ <tileset firstgid="301" name="door" tilewidth="16" tileheight="48">
+  <image source="../../../images/door.png" width="96" height="48"/>
+ </tileset>
+ <tileset firstgid="307" name="terminal" tilewidth="16" tileheight="22">
+  <image source="../../../images/terminal.png" width="16" height="22"/>
+ </tileset>
+ <layer name="walls" width="20" height="15">
+  <properties>
+   <property name="tileset" value="walls"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzNkY0JgCAQRi/TVjBH0LIR2qb2HyEjhUv8L6KDh6C+jzsVACA+oDMQi7brnlj7RM7pL1BXPNJPbY6r2ZunNecPRQ3KMCTOmb1TUiNcbyxRtoPD/S9ivazImVCesH063/9X7DLkxiCeKwqcHPqh79gy5/7sIWhkXxW4LcgXs0I9HjN6Fl4=
+  </data>
+ </layer>
+ <objectgroup name="things" width="20" height="15">
+  <object type="terminal" gid="307" x="160" y="96">
+   <properties>
+    <property name="id" value="2"/>
+   </properties>
+  </object>
+  <object type="door" gid="301" x="304" y="96">
+   <properties>
+    <property name="id" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff6164" name="crash" width="20" height="15"/>
+ <objectgroup color="#00a400" name="exits" width="20" height="15">
+  <object type="exit" x="0" y="80" width="16" height="64">
+   <properties>
+    <property name="room" value="hub"/>
+   </properties>
+  </object>
+  <object type="exit" x="304" y="64" width="16" height="32">
+   <properties>
+    <property name="room" value="terminals"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
