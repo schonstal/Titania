@@ -21,7 +21,6 @@
    eJyTZGBgkKQhZgRiJiBOw0HrAjEzCeboMRAG4njMgdlJjDkwoAPVh+xumJupBSSobB4sDLSgmI1E/SxIekFYmwE1HKVINA8UhvjiWZSAO7C5H1884zIP5A5c8Q+Sg8UvDMPM08TjDlIAse4k1zyYO1kZUOMPG2bFopaWZQE1MAAcohK3
   </data>
  </layer>
- <objectgroup color="#ff6164" name="crash" width="20" height="15"/>
  <objectgroup name="things" width="20" height="15">
   <object type="door" gid="301" x="224" y="96">
    <properties>
@@ -44,13 +43,15 @@
    </properties>
   </object>
  </objectgroup>
+ <objectgroup color="#ff6164" name="crash" width="20" height="15">
+  <object type="crash" x="312" y="160" width="16" height="32"/>
+ </objectgroup>
  <objectgroup color="#00a400" name="exits" width="20" height="15">
   <object type="exit" x="0" y="64" width="16" height="32">
    <properties>
     <property name="room" value="jump"/>
    </properties>
   </object>
-  <object x="304" y="160" width="16" height="32"/>
  </objectgroup>
  <objectgroup color="#ecee76" name="dialog" width="20" height="15">
   <object type="dialog" x="256" y="64" width="32" height="32">
