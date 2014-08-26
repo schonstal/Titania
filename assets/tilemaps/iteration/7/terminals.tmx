@@ -18,7 +18,7 @@
    <property name="tileset" value="walls"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJy1kwEKgzAMRTPddgNx7gbrrFfoadz9j7AW+uHPxbYBDTwSivn5JDiJyHQil0gX+exkH+kNOovUYyzoYGaLDmLOfewbno+Kx8F62IHL3I39V+pNvOV3j0+jXtph6c4DzQpUw4fmX7vzSnp481SHnLX7J4+4L0Dfi2q3menzvJYo+QyUrXrsBf6cUjO3TXbyvy+vzAAt/22Nzvj9FwkYFl8=
+   eJy1kwsKhDAMRONvbyB+bmB26xV6Gr3/EWyhA7F2awMaeCQUMxkSnIhoepHKUTv2P9k4GoXOSvcxZHQws0QH8Qt90jc8PxXjw3rYAQc+yv5W9Hq+dN7jrNTzO8zduRezrKjhI+U/dedN6OHNiNqGnLq/94j7AvQtouZoJvRLdpzzaaPcK/SkF/hjOnvliC7KTNd9mcQMUPLf3lErvz8AJMwWcQ==
   </data>
  </layer>
  <objectgroup name="things" width="20" height="15">
